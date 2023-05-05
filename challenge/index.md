@@ -31,6 +31,65 @@ description: './DESCRIPTION.md'
 # solve the challenge, notes for the teacher how to explain the subject etc.
 handbook: './HANDBOOK.md'
 
+# This is the list of all services, that are exposed by the challenge
+# Services are available on the challenge's IP address, which can be either
+# IP inside VPN subnet or a public IP address
+access:
+  - type: "ssh"
+    port: 22
+    username: student
+    password: heslo1234
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+
+  - type: "http"
+    port: 80
+    username: student
+    password: heslo1234
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+
+  - type: "vnc"
+    port: 5900
+    username: admin
+    password: password
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+
+  - type: "rdp"
+    port: 3389
+    username: admin
+    password: password
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+
+  - type: "tcp"
+    protocol: "minecraft"
+    port: 12345
+    username: admin
+    password: password
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+      
+  - type: "udp"
+    protocol: "minecraft"
+    port: 12345
+    username: admin
+    password: password
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+
+  - type: "other"
+    text: |
+      Dodatečné informace ke způsobu připojení s možností použití markdownu
+      > Citace třeba
+
 # This is the list of all flags, whether they are a static or dynamic text
 # flag, select flag or an automatic command flag
 flags:
