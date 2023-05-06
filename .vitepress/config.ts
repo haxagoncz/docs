@@ -15,7 +15,11 @@ export default defineConfig({
           {
             text: 'Overview',
             link: '/challenge/',
-          }
+          },
+          {
+            text: 'Description formatting',
+            link: '/challenge/formatting',
+          },
         ]
       }]
     },
