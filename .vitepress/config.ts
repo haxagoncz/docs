@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.vuejs.org/config/app-configs
 export default defineConfig({
-  title: 'Haxagon',
+  title: 'Haxagon docs',
   themeConfig: {
     editLink: {
       pattern: 'https://github.com/haxagoncz/docs/tree/main/:path',
