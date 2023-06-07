@@ -7,7 +7,7 @@ specification.
 ## Example
 This example shows how to define a challenge with all it needs
 ```yaml
-name: 'Testing challenge'
+title: 'Testing challenge'
 
 # Short description is a short summary of what the challenge is about, It is
 # shown in overviews and other places, where using the full description
