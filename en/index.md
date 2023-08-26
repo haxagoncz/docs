@@ -3,10 +3,12 @@ layout: home
 
 hero:
   name: Haxagon
-  tagline: Vyučujte IT jednodušeji
+  tagline: IT education made easy
   image:
     src: /haxagon.svg
     alt: Haxagon logo
   actions:
+    - text: Challenge specification
+      link: ./challenge/
 
 ---

@@ -9,19 +9,22 @@ export default defineConfig({
     },
     siteTitle: 'Haxagon',
     sidebar: {
-      '/': [{
+      '/en': [{
         text: 'Challenge specification',
         items: [
           {
             text: 'Overview',
-            link: '/challenge/',
+            link: '/en/challenge/',
           },
           {
             text: 'Description formatting',
-            link: '/challenge/formatting',
+            link: '/en/challenge/formatting',
           },
         ]
-      }]
+      }],
+      '/cs': [
+
+      ]
     },
     socialLinks: [
       {
@@ -29,5 +32,16 @@ export default defineConfig({
         link: 'https://github.com/haxagoncz',
       },
     ],
+    i18nRouting: true,
+  },
+  locales: {
+    en: {
+      label: 'English (US)',
+      lang: 'en'
+    },
+    root: {
+      label: 'Čeština',
+      lang: 'cs',
+    }
   }
 })
