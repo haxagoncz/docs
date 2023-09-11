@@ -25,7 +25,7 @@ The value in src is an id of a cast uploaded on https://asciinema.org/.
 You can also define extra options with the `options` attribute. (A string with json encoded options) The options can be found [here](https://asciinema.org/docs/embedding)
 
 ## Conditional rendering
-With the \<ip> placeholder, you might be wondering how to show your custom message when the challenge isn't running or foesn't have IP yet. That's where conditional rendering comes in, anything you put inside \<if> element that has a valid condition will only be shown if the condition is true.  
+With the \<ip> placeholder, you might be wondering how to show your custom message when the challenge isn't running or doesn't have IP yet. That's where conditional rendering comes in, anything you put inside \<if> element that has a valid condition will only be shown if the condition is true.  
 Currently you can only use that for challenge's IP.
 
 ```md
