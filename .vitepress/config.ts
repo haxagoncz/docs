@@ -35,10 +35,10 @@ export default defineConfig({
     i18nRouting: true,
   },
   locales: {
-    en: {
+    /*en: {
       label: 'English (US)',
       lang: 'en'
-    },
+    },*/
     root: {
       label: 'Čeština',
       lang: 'cs',
