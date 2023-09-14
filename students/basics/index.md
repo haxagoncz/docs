@@ -9,18 +9,12 @@ Pro změnu aktuálně vybrané skupiny je postup velmi podobný – vlevo nahoř
 
 ## Základní prvky stránky
 
-Pro studenty je dostupných několik stránek v navigačním menu:
+Navigační menu v levé části obsahuje několik podstránek. Pro studenty to jsou tyto:
 - [Přehled](#prehled)
 - [Katalog](#katalog)
 - [Žebříčky](#zebricky)
 - [Nastavení](#nastaveni)
 - [VPN Konfigurace](#vpn-konfigurace)
-
-Učitelé mají navíc administrační menu:
-- [Spravovat](#spravovat)
-    - [Uživatelé](#uzivatele)
-    - [Skupiny](#skupiny)
-
 
 ## Přehled
 
@@ -32,12 +26,12 @@ Kliknutím kamkoliv do prostoru jména úlohy se dostanete na detail úlohy.
 
 V pravém sloupci jsou všechny zadané a rozpracované úlohy, řazené podle data zadání, od nejstarších k nejnovějším. Opět je zde možné se dostat na detail jednotlivých úloh kliknutím na jejich jméno.
 
-V prostředku jsou zobrazeny aktuálně běžící úlohy, aby nebyly potřeba složitě hledat. Zobrazují se základní informace o úkolu:  
-<!--- Zde by to chtělo spíše screenshot s šipkami na vysvětlení jednotlivých částí dlaždice -->
-- Jméno
-- Okruh, do kterého patří
-- Počet splněných vlajek / celkový počet vlajek 
-- Typ úlohy: úkol / test
+V prostředku jsou zobrazeny aktuálně běžící úlohy, aby nebyly potřeba složitě hledat. Zobrazují se základní informace o úloze:  
+![Screenshot dlaždice s informacemi o spuštěné úloze](./RunningChallengeDetail.png)
+1. Jméno
+2. Okruh úloh, do kterého patří
+3. Počet splněných vlajek / celkový počet vlajek
+4. Typ úlohy: úkol / test
 
 &nbsp;
 
