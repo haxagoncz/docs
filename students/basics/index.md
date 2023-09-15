@@ -38,6 +38,17 @@ V prostředku jsou zobrazeny aktuálně běžící úlohy, aby nebyly potřeba s
 A v neposlední řadě je zcela nahoře vidět základní statistika o postupu studenta – Celkový počet vlajek, které vyřešil a procentuální vyjádření ze všech vlajek všech zadaných úloh.
 
 ## Katalog
+
+Katalog je místo pro studenty i učitele, kde si můžou projít úlohy, které jsou zde (na rozdíl od stránky [Přehled](#prehled)) uspořádané do tematických kategorií. Každá úloha zde má krátké shrnutí, aby bylo ryhle jasné, čemu se věnuje, dále pak datum, kdy ji student dostal zadanou k vyřešení a počet jejích vlajek.
+
+Vyhledávat úlohy v horní části lze jak podle jejich jména, tak i podle jména jejich kategorie. Vyhledávací políčko je možné také aktivovat klávesou `/`.  
+Po vyhledání úlohy se otevře zobrazení kategorie s rozbaleným krátkým shrnutím vybrané úlohy, aby uživatel jednoduše viděl, co dané úloze předchází a co následuje.
+
+V detailu každé kategorie jsou vidět pouze ty úlohy, které má žák zadané od svého učitele.
+
+V pravé části jsou opět statistiky o studentově postupu kategorií – Počet splněných vlajek z úloh této kategorie a jejich procentuální vyjádření k celkovému počtu vlajek v kategorii.  
+Hned pod tím je celkový počet úloh v kategorii, včetně těch, které žák nemá zadané. A jako poslední může student v pravém panelu vidět, které úlohy z těch zadaných má dokončené (číslice je zelená) a které mu ještě chybí (šedá).
+
 ## Žebříčky
 ## Nastavení
 ## VPN Konfigurace
