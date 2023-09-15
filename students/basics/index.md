@@ -1,4 +1,4 @@
-# Základní používání
+# Základní používání platformy HAXAGON
 
 Studenti jsou na platformě rozděleni do skupin, které většinou představují třídy, popřípadě skupiny, do kterých chodí. Veškerá cvičení a úkoly se zadávají právě pro určité skupiny a Žebříčky také fungují v rozsahu skupin.
 
@@ -39,7 +39,7 @@ A v neposlední řadě je zcela nahoře vidět základní statistika o postupu s
 
 ## Katalog
 
-Katalog je místo pro studenty i učitele, kde si můžou projít úlohy, které jsou zde (na rozdíl od stránky [Přehled](#prehled)) uspořádané do tematických kategorií. Každá úloha zde má krátké shrnutí, aby bylo ryhle jasné, čemu se věnuje, dále pak datum, kdy ji student dostal zadanou k vyřešení a počet jejích vlajek.
+Katalog je místo pro studenty i učitele, kde si můžou projít úlohy, které jsou zde (na rozdíl od stránky [Přehled](#prehled)) uspořádané do tematických kategorií. Každá úloha zde má krátké shrnutí, aby bylo rychle jasné, čemu se věnuje, dále pak datum, kdy ji student dostal zadanou k vyřešení a počet jejích vlajek.
 
 Vyhledávat úlohy v horní části lze jak podle jejich jména, tak i podle jména jejich kategorie. Vyhledávací políčko je možné také aktivovat klávesou `/`.  
 Po vyhledání úlohy se otevře zobrazení kategorie s rozbaleným krátkým shrnutím vybrané úlohy, aby uživatel jednoduše viděl, co dané úloze předchází a co následuje.
@@ -50,9 +50,45 @@ V pravé části jsou opět statistiky o studentově postupu kategorií – Poč
 Hned pod tím je celkový počet úloh v kategorii, včetně těch, které žák nemá zadané. A jako poslední může student v pravém panelu vidět, které úlohy z těch zadaných má dokončené (číslice je zelená) a které mu ještě chybí (šedá).
 
 ## Žebříčky
+
+Žebříčky poskytují studentům okamžitou informaci o jejich postupu ve třídě nebo v soutěži. Každá splněná vlajka v úloze přidá studentovi určitý počet bodů za její úspěšné vyřešení. Zcela nahoře je vidět posledních několik vlajek, které student splnil, a kdy se tak stalo.
+
+Tři studenti s nejvyšším počtem bodů v aktuálně vybrané skupině se zobrazují na "stupních vítězů", spolu s jejich vybraným avatarem.
+
+Všichni studenti jsou také řazeni postupně v tabulce, podle svých bodů. Pro jednoduché zobrazení jsou také jejich body reprezentovány grafem – počet bodů nejlepšího studenta se ukazuje jako plný řádek, ostatní studenti mají svůj progress bar vyplněný proporcionálně k tomu. 
+
 ## Nastavení
+
+V nastavení si každý může trochu přizpůsobit platformu HAXAGON k obrazu svému. Také si zde studenti mění vzhled svého profilu.
+
+### Discord integrace
+Pro přístup na [komunitní Discord server](https://discord.gg/Z3bn4EyE3H) je potřeba ověřit, že jste skutečně uživateli HAXAGONu. Pro to se používá autorizace discord účtem.
+
+Pro propojení klikněte na tlačítko s logem Discord vlevo nahoře. To Vás přesměruje na stránky discord.com, kde povolíte přístup ke jménu Vašeho účtu. Pokud nejste v prohlížeči přihlášení do Discordu, budete se muset přihlásit.
+
+Po propojení účtů můžete pokračovat na Discord server a řídit se pokyny pro ověření napsanými v kanálu #verification.
+
+### Avatar
+Avatar si lze vybrat z několika předvytvořených možností. Nahrávání vlastních obrázků možné není.  
+Uživatelský avatar se poté zobrazuje na několika místech: V Žebříčcích, v seznamu řešitelů úlohy a učitelé ho vidí v seznamu svých studentů.
+
+### Nastavení Platformy
+Webová stránka HAXAGON je dostupná jak v češtině, tak v angličtině. Pokud někde naleznete chybějící překlad, nahlaste ho, prosím, na našem [discord serveru](https://discord.gg/Z3bn4EyE3H).
+
+### Připojení
+Někteří vybraní studenti mohou vidět v nastavení možnost změnit způsob připojení k úlohám. Možnost "VPN" se bude chovat stejně, jako doposud (je nutné si nastavit VPN do HAXAGON sítě, viz [VPN Konfigurace](#vpn-konfigurace)), možnost "Veřejná IP" poskytne studentovi při připojování možnost použít veřejnou IP jednoho ze serverů, tudíž umožňuje připojení i na zařízeních, na kterých VPN není nastavená.
+
+
 ## VPN Konfigurace
 
-## Spravovat
-### Uživatelé
-### Skupiny
+Pro připojení do úloh je potřeba využít VPN a připojit se do sítě HAXAGONu.
+
+Stránka VPN Konfigurace obsahuje všechny potřebné informace k nastavení VPN na Vašem oblíbeném operačním systému. Možnost pro váš aktuálně používaný operační systém by se měla detekovat automaticky, zvýraznit a zobrazit v seznamu na prvním místě. Pokud se toto nestane, jednoduše vyberte svůj OS ze seznamu a klikněte na tlačítko "Nastavit VPN".
+
+Poté stačí následovat kroky na stránce pro instalaci VPN klienta, import konfiguračního souboru a spuštění VPN připojení.  
+Návody pro Linux a macOS/OS X obsahují také předpřipravený shell script, který stačí vložit do příkazové řádky a spustit. Příkaz obsahuje Vaši VPN konfiguraci a automaticky Vás připojí na VPN.
+
+::: danger Pozor!
+Nikdy s nikým nesdílejte svůj `.conf` VPN soubor / QR kód pro mobilní zařízení / shell příkaz na připojení!  
+Obsahuje údaje pro připojení k HAXAGON úlohám pod Vaším účtem!
+:::
