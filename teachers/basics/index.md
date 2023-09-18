@@ -65,11 +65,65 @@ Jediný dozdíl pro učitelské účty na stránce Žebříčky je živý zázna
 
 # Zadávání úloh
 
+Proces zadávání úloh začíná v [Katalogu úloh](/students/basics/index.md#katalog). Zde si učitelé mohou projít všechny úlohy podle kategorií, prohlédnout si jejich teorii i Příručku s postupem řešení.  
+V každé kategorii je jasně vidět, které úlohy jsou již pro vybranou skupinu zadané a které ještě ne.
+
+Zadávání funguje podobnou formou, jako nákupní košíky v e-shopech: Vyberete položky (úlohy), tlačítkem "Přidat" je přidáte do Košíku, který si je pamatuje napříč celou webovou stránkou –⁠ můžete si tedy libovolně prohlížet detaily úloh. Košík také fugnuje mezi jednotlivými kategoriemi v Katalogu, můžete tedy přidat jednu úlohu z kategorie "Web", vrátit se do přehledu a vybrat další úlohu na příklad z kategorie "Crypto".  
+Pro zadání všech úloh z kategorie lze použít tlačítko nad seznamem úloh, pod popiskem kategorie.
+
+## Košík
+
+Košík vybraných úloh pro zadání se nachází v pravé části obrazovky (nebo zcela nahoře na mobilních telefonech).
+
+Na vrchu košíku je jednoduché shrnutí zadání, tedy kolik celkových úloh bude zadáno a jaký je souhrnný odhadovaný čas potřebný pro vyřešení.
+
+Dále jsou podrobnější informace o jednotlivých úlohách: Jejich jméno, počet vlajek, odhadovaná časová náročnost a štítky.  
+Pořadí, v jakém jsou zde úlohy vylistovány nemá žádný význam, je to pouze pořadí, ve kterém je učitel vybral.  
+
+Každou úlohu je možné odebrat z košíku několika způsoby:
+
+- V seznamu úloh v rámci kategorie bude mít úloha, která je v košíku, vedle sebe tlačítko "Odebrat"
+- Přímo v košíku má vedle sebe každá úloha malý červený křížek
+- Nad seznamem úloh v košíku je také možnost košík vyprázdnit tlačítkem "🗑 Vše"
+
+## Zadání délky úloh
+
+Pokud jste spokojeni se seznamem vybraných úloh pro zadání, pokračujte tlačítkem "Zadat úlohy" na spodku košíku.
+
+Na této obrazovce je možné nastavit kolik času budou mít studenti na vyřešení úloh.  
+
+Délka úlohy znamená čas, po který mají studenti povoleno mít úlohu spuštěnou a pracovat na ní, tedy čas, po který poběží servery a za který bude škola účtována.  
+Na některých úlohách je možné pracovat i bez spuštění, pokud obsahují všechny informace k řešení v popisku. Většinou je ale potřeba úlohy pro práci spouštět, aby se studenti mohli připojit na simulované zařízení.
+![Screenshot příkladu úlohy, u které zbývá pro vyřešení pouze hodina a třičtvrtě z původně zadaných dvou hodin.](./RemainingChallengeTime.png)
+
+::: tip
+Vybraný čas se aplikuje pro všechny vybrané úlohy. Pro nastavení rozdílného času pro různé úlohy je nutné zadat úlohy jednotlivě.
+:::
+
+Čas je možné vybrat buďto výberem z možností v levé části, nebo posuvníkem. Oba mají stejnou funkci.
+
+Pod délkou úloh je krátké shrnutí zadání: Které skupině budou úlohy zadány a o kterou skupinu se jedná.
+
+::: tip
+Kdykoliv během procesu zadávání je možné [změnit skupinu](/students/basics/index.md#zakladni-pouzivani-platformy-haxagon) výběrem v horní části navigačního menu stránky.
+:::
+
+<br>
+
+::: info
+V budoucnu v této sekci přibudou i další možnosti nastavení, na příklad možnost uveřejnit zadané úlohy až od zadaného data a času nebo podobné vychytávky.
+:::
+
+Pokud chcete v tomto kroku upravit, které úlohy se zadají, využijte tlačítko "1. Úkoly" zhruba vprostřed stránky pod shrnutím počtu a odhadované délky úloh.  
+![Screenshot tlačítka "1. Úkoly" vlevo od tlačítka "2. Délka trvání, pod shrnutím počtu a odhadované délky úloh."](./BackToPickingChallenges.png)
+
+<br> 
+
+Celý proces zadávání se ukončí tlačítkem "Zadat úlohy", které zpřístupní vybrané úlohy studentům. 
+
+# Správa skupin
 
 ::: info INFO ⚒
 Tato stránka není hotová a je stále v procesu psaní.
 :::
 
-
-
-# Správa skupin
