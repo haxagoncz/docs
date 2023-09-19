@@ -5,6 +5,8 @@ Studenti jsou na platformě rozděleni do skupin, které většinou představuj�
 Po přihlášení do systému je nutné vybrat, kterou skupinu chce uživatel právě používat. Ve většině případů se budou studenti nacházet pouze v jedné, takže není z čeho volit. Automaticky by se mělo otevřít levé menu, v něm vyberte skupinu jednoduchým kliknutím na jméno skupiny.   
 Pokud se menu neotevřelo, klikněte v levém horním rohu, pod logem HAXAGONu, na ikonu "Ž" (nebo nápis "Žádná skupina", pokud máte menu rozbalené).
 
+![Screenshot of menu to select a group.](./SelectingAGroup.png)
+
 Pro změnu aktuálně vybrané skupiny je postup velmi podobný – vlevo nahoře klikněte na jméno aktuální skupiny, což otevře seznam všech Vašich skupin.
 
 ## Základní prvky stránky
