@@ -2,22 +2,17 @@
 layout: home
 
 hero:
-    name: Studenti
+    name: Učitelé
     tagline: |- 
         Navigace platformou,
-        Úlohy – spouštění, odevzdávání
+        Úlohy – zadávání, vyhodnocování
         
 
 features:
   - icon: 👨‍🎓
     link: ./basics/
     title: Základy
-    details: Struktura platformy a návody pro studenty
-
-  - icon: 📝
-    link: ./challenges/
-    title: Úlohy
-    details: Řešení úloh
+    details: Struktura platformy a návody pro učitele
 
   - icon: 🛠
     link: ./troubleshooting/
