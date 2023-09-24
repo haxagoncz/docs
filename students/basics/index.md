@@ -78,7 +78,7 @@ Uživatelský avatar se poté zobrazuje na několika místech: V Žebříčcích
 Webová stránka HAXAGON je dostupná jak v češtině, tak v angličtině. Pokud někde naleznete chybějící překlad, nahlaste ho, prosím, na našem [discord serveru](https://discord.gg/Z3bn4EyE3H).
 
 ### Připojení
-Někteří vybraní studenti mohou vidět v nastavení možnost změnit způsob připojení k úlohám. Možnost "VPN" se bude chovat stejně, jako doposud (je nutné si nastavit VPN do HAXAGON sítě, viz [VPN Konfigurace](#vpn-konfigurace)), možnost "Veřejná IP" poskytne studentovi při připojování možnost použít veřejnou IP jednoho ze serverů, tudíž umožňuje připojení i na zařízeních, na kterých VPN není nastavená.
+Zde je možnost nastavit výchozí způsob připojení k úlohám. Možnost "VPN" je to, na co jsou dlouhodobější uživatelé zvyklí (je nutné si nastavit VPN do HAXAGON sítě, viz [VPN Konfigurace](#vpn-konfigurace)), možnost "Veřejná IP" poskytne studentovi při připojování možnost použít veřejnou IP jednoho ze serverů, tudíž umožňuje připojení i na zařízeních, na kterých VPN není nastavená.
 
 
 ## VPN Konfigurace
