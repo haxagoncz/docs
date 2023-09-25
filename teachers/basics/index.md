@@ -35,6 +35,14 @@ Učitel má několik možností, jak spravovat instance úlohy:
 
 - Nebo pokud při [zadávání úlohy](#zadavani-uloh) v počátku špatně odhadl potřebný čas, nebo prostě jen studentům čas vypršel, může všem studentům resetovat čas na plnou původní hodnotu tlačítkem nad tabulkou.
 
+<!--- 
+TODO: doplnit mazání vyřešených vlajek: Uživatelé-> klik na uživatele -> smazat vlajku  => takhle se dá obnovit počet pokusů.
+--->
+
+<!--- 
+TODO: doplnit reset času pro jednoho studenta - pořád not sure, jak se to dělá??
+--->
+
 ### Mazání úlohy
 
 Posledním z administrativních nástrojů je možnost smazat zadanou úlohu.
@@ -44,7 +52,7 @@ Tím zmizí studentům ze stránky [Přehled](/students/basics/index.md#prehled)
 ::: warning Pozor!
 Mazání úlohy nevyžaduje potvrzení, takže pozor na ukliknutí-se –⁠ smazání úlohy smaže studentům i všechen jejich postup v dané úloze.
 <!--- 
-¨TODO: až začne tlačítko vyžadovat potvrzení, smazat tohle.
+TODO: až začne tlačítko vyžadovat potvrzení, smazat tohle.
 --->
 :::
 
