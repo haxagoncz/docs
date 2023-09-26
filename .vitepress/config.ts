@@ -33,6 +33,7 @@ export default defineConfig({
       },
     ],
     i18nRouting: true,
+    outline: [1, 4]
   },
   locales: {
     /*en: {
