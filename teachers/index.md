@@ -19,4 +19,9 @@ features:
     title: Troubleshooting
     details: Řešení na běžné problémy
 
+  - icon: 🚀
+    link: ./getting-started/
+    title: Getting started
+    details: První kroky k výuce
+
 ---
