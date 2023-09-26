@@ -56,15 +56,12 @@ Pokud si v úloze něco rozbijete (smažete důležité soubory, programy atd.),
 Postup v řešení vlajek se <u>NE</u>resetuje, ale <u>**smažou se**</u> veškeré <u>**soubory**</u> v kontejneru úlohy (vytvoří se nový). Takže pokud potřebujete k řešení dalších vlajek nějaké scripty z předchozích vlajek, zazálohujte si je, přepište je, nebo si je stáhněte jinam (třeba na lokální zařízení). 
 
 ### Došel mi čas na řešení úlohy.
-Řekněte svému vyučujícímu, ten Vám může resetovat čas na úloze. Viz [Správa uživatelů na úloze](/teachers/basics/index.md#uzivatele). 
-<!--
-TODO: fixnout link na správnou sekci, až bude více do detailu dopsané, jak se resetuje čas.
--->
+Řekněte svému vyučujícímu, ten Vám může resetovat čas na úloze. Viz [Správa uživatelů na úloze](/teachers/basics/index.md#sprava-casu). 
 
 ### Došly mi pokusy pro vyřešení vlajky
 Ve většině případů toto znamená, že budete mít danou vlajku označenou jako nevyřešenou. Počet pokusů pro odevzdání vlajek je upraven podle obtížnosti úlohy a jejího zaměření, např. testy budou mít méně pokusů.  
 Pokud se nejedná o test, a šlo o jednoduchou chybu při odevzdávání (zapomenutí syntaxe `haxagon{…}`, …), můžete zkusit požádat svého vyučujícího, aby vám nepodařená odevzdání smazal.
 
 ### Rád bych si úlohu udělal znovu, včetně vyřešení všech vlajek
-Požádejte svého vyučujícího, ten má možnost vymazat progress na úloze a vyřešené vlajky. Viz [Správa uživatelů a odevzdání](/teachers/basics/index.md#uzivatele).
+Požádejte svého vyučujícího, ten má možnost vymazat progress na úloze a vyřešené vlajky. Viz [Správa uživatelů a odevzdání](/teachers/basics/index.md#resetovani-vlajek).
 

@@ -1,6 +1,6 @@
 
 ::: info INFO ⚒
-Tato stránka není hotová a je stále v procesu psaní.
+Tato stránka není je stále ještě v procesu psaní.
 :::
 
 Something something,
