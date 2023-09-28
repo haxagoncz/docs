@@ -15,7 +15,7 @@ Zcela nahoře se nacházejí základní informace o úloze
 - Tlačítko pro spuštění/zastavení
 - Informace o zadaném čase a čase zbývajícím pro vyřešení úlohy.  
     ::: info
-    Tento čas se počítá pouze, když úloha běží.
+    Tento čas se počítá pouze, když úloha běží (je připravena k plnění - při startování a vypínání se čas nepočítá).
     :::
 
 ## 2. Přehled
