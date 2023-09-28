@@ -38,7 +38,7 @@ Dále je zde možnost zkopírovat IP adresu zařízení, na kterém je úloha, n
 
 Můžete si povšimnout, že naprosté většině případů jsou IP adresy ve formátu `192.168.30.x`. To znamená, že to jsou adresy ze soukromého rozsahu a nejsou dostupné volně z internetu. K připojení na takové úlohy je třeba být připojen na HAXAGON VPN. Více informací o nastavení je na [stránce o základním používání platformy](/students/basics/#vpn-konfigurace).
 
-> K většině z úloh je možné se **připojit přes veřejnou IP adresu**. Po zakliknutí této v sekci *Připojení* možnosti (pakliže není vybrána jako výchozí) **není nutné být připojený na VPN**.
+> K většině z úloh je možné se **připojit přes veřejnou IP adresu**. Po zakliknutí této možnosti v sekci *Připojení* (pakliže není vybrána jako výchozí) **není nutné být připojený na VPN**.
 
 ## 4. Teorie
 V prostřed stránky se nacházejí 3 záložky, které obsahují hlavní náplň stránky.
