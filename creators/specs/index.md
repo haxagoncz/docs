@@ -41,6 +41,7 @@ Tyto soubory jsou detailněji rozebrány v následujících sekcích.
 
 ::: info
 TBD
+<!-- TODO: -->
 :::
 
 ## `flags`
@@ -174,4 +175,118 @@ flags:
     container: "server"
     exitCode: 0
 ```
+
+--- 
+<br>
+
+# `docker-compose.yaml`
+
+Tímto souborem jsme schopni definovat, jaká infrastruktura se pro úlohu spustí. Dokumentace formátu je dostupná na [https://docs.docker.com/compose/](https://docs.docker.com/compose/).
+
+## Limity
+V souboru docker-compose není možné
+- Eskalovat práva kontejneru
+    - Vytvářet privilegované kontejnery
+    - Přidávat kontejnerům systémové schopnosti (SYStem capabilities)
+- Mountovat adresáře a soubory (vše potřebné by mělo být do kontejneru přidáno v build fázi)
+
+## Signalizace úspěšného nastartování scénáře
+
+Je nutné systém informovat o tom, že je scénář spuštěný a vše je připaveno. Tuto informaci je možné systému sdělit tím, že do `stdout` entrypointu/commandu libovolného commandu definovaného v docker-compose souboru vypíšete řetězec `SCENARIO_IS_READY`.
+
+## Ukázkový docker-compose.yml
+```yaml
+version: "3"
+
+services:
+    webserver:
+        image: nonbusybox
+        container_name: webserver
+        command: sh -c '/setup.sh && echo SCENARIO_IS_READY && sleep infinity'
+        ports:
+            - "80:80"
+```
+
+--- 
+<br>
+
+# `Vagrantfile`
+
+Vagrantfile je konfigurační soubor pro [Vagrant](https://www.vagrantup.com/), který se používá k nastavení virtuálního prostředí pro vaši úlohu. Tento soubor by měl být umístěn ve stejné složce jako `challenge.yaml`.
+
+## Obsah Vagrantfile
+
+Ve `Vagrantfile` může být nastaveno např.:
+- Image operačního systému, který se má použít pro virtuální stroj (např. **Ubuntu**, nebo **CentOS**)
+- Konfigurace sítě pro virtuální stroj
+- Provisioning
+- Omezení prostředků (RAM, CPU, růzené IO atp.)
+
+## Příklad `Vagrantfile`
+```ruby
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  # Nastavení libvirt provider
+  config.vm.provider :libvirt do |libvirt|
+    libvirt.driver = "kvm"
+  end
+
+  # Nastavení obrazu operačního systému pro virtuální stroj
+  config.vm.box = "ubuntu/focal64"
+
+  # Konfigurace privátní sítě pro virtuální stroj
+  config.vm.network "private_network", ip: "192.168.33.10"
+
+  # Nastavení RAM a CPU pro virtuální stroj
+  config.vm.provider "libvirt" do |vb|
+    vb.memory = "512"
+    vb.cpus = 1
+  end
+
+  # Konfigurace shell provisioningu
+  config.vm.provision "shell" do |s|
+    s.inline = <<-SHELL
+      apt-get update
+      apt-get install -y apache2
+      echo SCENARIO_IS_READY
+    SHELL
+    s.env = {
+      "VARIABLE_NAME" => "value"
+    }
+  end
+end
+```
+
+# `THEORY.md`
+Zde jsou předávány teoretické znalosti bez vazby na obsah úlohy.
+::: info
+TBD
+<!-- TODO: -->
+:::
+# `DESCRIPTION.md`
+
+# `HANDBOOK.md`
+::: info
+TBD
+<!-- TODO: -->
+:::
+
+# Další konvence pro tvorbu zadání
+## Technické informace a kód
+Části textu obsahující nejakou technickou informaci, např.:
+- definici subnetu - `192.168.40.0/24`
+- příkazy - `find --name file`
+- parametr - `--sevice-scan`
+a podobné zaobalíme do code highlight bloku pomocí znaku \`
+
+Pokud vkládáme delší kód (např. snippet v bashi, nebo jiném programovacím jazyce), zaobalíme ho do víceřádkového code bloku se zvýrazňováním syntaxe:  
+\`\`\`jazyk  
+// kód  
+\`\`\`  
+Jméno programovacího jazyka se vloží za první tři zpětné apostrofy, místo slova `jazyk`. 
+<!-- Kompletní seznam jazyků podporovaných na zvýraznění syntaxe je [zde] -->
+<!-- TODO: ten seznam -->
 
