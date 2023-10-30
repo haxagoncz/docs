@@ -22,5 +22,9 @@ features:
     link: admins/
     title: Školní administrátoři
     details: Správa systému
+  - icon: 🛠
+    link: creators/
+    title: Tvůrci úloh
+    details: Formát úloh a tvorba popisu
 
 ---
