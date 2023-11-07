@@ -43,10 +43,28 @@ Tyto soubory jsou detailněji rozebrány v následujících sekcích.
 
 ## `access`
 
-::: info
-TBD
-<!-- TODO: -->
-:::
+Základní formát objektů přístupu je tento:
+| název parametru | popis parametru | příklad |
+|-----------------|-----------------|---------|
+| type            | Typ připojení, viz dále. | "ssh" |
+| port            | Port, na který se mají řešitelé připojit. | 22 |
+| username        | Uživatelské jméno použité pro připojení. | student |
+| password        | Heslo použité v páru s uživatelským jménem. | heslo1234 |
+| text            | Nepovinný text s dodatečnými informacemi. | "Formátovaný \*text\*" |
+
+V parametru `type` je možné použít jednu z těchto hodnot:
+- ssh
+- http
+- vnc
+- rdp
+- tcp
+- udp
+- other  
+
+U typu připojení `other` není povinné uvádět parametry `port`, `username` a `password`, většinou je ale naopak velmi využíván parametr `text` k vysvětlení nestandardního připojení.
+
+Parametr `text` umožňuje využití Markdownu k formátování. Fungování víceřádkových textů v YAML je hezky vysvětleno na stránce [YAML-multiline.info](https://yaml-multiline.info/). 
+
 
 ## `flags`
 Vlajky se dělí do celkem 5 typů.
@@ -145,6 +163,18 @@ description: ./DESCRIPTION.md
 
 # relativní cesta k souboru obsahující učitelskou příručku k úloze
 handbook: ./HANDBOOK.md
+
+# informace o možnostech připojení na úlohu
+access:
+  - type: "ssh"
+    port: 22
+    username: student
+    password: heslo1234
+
+  - type: "http"
+    port: 80
+    username: student
+    password: heslo1234
 
 # vlajky, ktere jsou s ulohou spojeny
 flags:
