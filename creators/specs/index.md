@@ -7,18 +7,22 @@
  ## Technická specifikace úloh
 
  ### Virtualizace infrastruktury
+ <!-- 
  V systému Haxagon mohou být úlohy spouštěny pomocí dvou druhů virtualizace:
  - ***Vagrant***  
-    [Vagrant](https://www.vagrantup.com/) je nástroj pro správu virtuálních strojů, které umožňuje vytvořit, spravovat a automatizovat viruální prostředí. Je nutné použít livcrt provider pro spouštění úloh v systému Haxagon.
+    [Vagrant](https://www.vagrantup.com/) je nástroj pro správu virtuálních strojů, které umožňuje vytvořit, spravovat a automatizovat viruální prostředí. Je nutné použít livcrt provider pro spouštění úloh v systému Haxagon. 
  - ***Docker***  
-    [Docker-compose](https://docs.docker.com/compose/) je nástroj pro spouštění a sprácu aplikací pomocí [Docker](https://docs.docker.com/)u. Umožňuje spouštět více kontejnerů jako jeden celek a čídit je pomocí jednoho konfiguračního souboru.
+ -->
+V systému Haxagon jsou úlohy spouštěny virtualizací v **Dockeru**.  
+[Docker-compose](https://docs.docker.com/compose/) je nástroj pro spouštění a správu aplikací pomocí [Docker](https://docs.docker.com/)u. Umožňuje spouštět více kontejnerů jako jeden celek a řídit je pomocí jednoho konfiguračního souboru.
 
 ### Struktura repozitáře s úlohou
-Formát plohy je velice jednoduchý - stačí systému poskytnout následující soubory v gitovém repozitáři:
+Formát úlohy je velice jednoduchý – stačí systému poskytnout následující soubory v gitovém repozitáři:
 - `challenge.yaml` - Soubor ve formátu YAML, který definuje základní parametry úlohy.
-- potřebné zadání pro virtualizačního providera, který vytvoří infrastrukturu pro každou instanci úlohy (podle druhu virtualizace):
+<!-- - potřebné zadání pro virtualizačního providera, který vytvoří infrastrukturu pro každou instanci úlohy (podle druhu virtualizace):
     - `Vagrantfile`
-    - `docker-compose.yaml`
+    - `docker-compose.yaml` -->
+- `docker-compose.yaml` / `docker-compose.yml` - Instrukce pro sestavení kontejneru(ů) úlohy, viz [Docker dokumentace](https://docs.docker.com/compose/).
 - `THEORY.md` - Markdown soubor s teoretickou částí úlohy, kde jsou řešiteli předávány teoretické znalosti bez vazby na obsah úlohy.
 - `HANDBOOK.md` - Markdown soubor obsahující obsah, který slouží jako příručka pro učitele.
 - `DESCRIPTION.md` - Krátký popis k zadání úlohy.
@@ -32,9 +36,9 @@ Tyto soubory jsou detailněji rozebrány v následujících sekcích.
 | title            | Pojmenování úlohy | ANO |
 | shortDescription | Krátký popisek shrnující obsah úlohy | ANO |
 | theory           | Relativní cesta k Markdown souboru s teorií k úloze | NE |
-| description      | Relativní cesta k Markdown souboru s popisem úlohy k vlajkám | NE |
+| description      | Relativní cesta k Markdown souboru s popisem k vlajkám | NE |
 | handbook         | Relativní cesta k Markdown souboru s příručkou pro učitele | NE |
-| access           | Pole objektů definující možnosti připojení k úloze. Více o přístupu dále. | NE |
+| access           | Pole objektů definující možnosti připojení k úloze. Více o přístupu dále. | ANO |
 | flags            | Pole objektů definující vlajky, které budou součástí úlohy. Více o vlajkách dále. | ANO |
 
 ## `access`
@@ -51,13 +55,13 @@ Všechny typy vlajek mají společné tyto parametry:
 
 | název parametru | popis parametru | příklad |
 |-----------------|-----------------|---------|
-| name            | Pojmenování vlajky                                   | Oprávnění souboru `file-1`
-| description     | Bližší info o úkolu. Podporuje Markdown formátování. | Změň oprávnění souboru `file-1` na 742.
-| points          | Bodové ohodnocení vlajky                             | 20
-| identifier      | Unikátní (v rámci této úlohy) identifikátor vlajky   | `file-perms-check1`
-| type            | Číslo označující druh vlajky                         | "4"
+| name            | Pojmenování vlajky                                                                  | Oprávnění souboru `file-1`
+| description     | Bližší informace o úkolu. Podporuje Markdown formátování.                           | Změň oprávnění souboru `file-1` na 742.
+| points          | Bodové ohodnocení vlajky                                                            | 20
+| identifier      | Unikátní (v rámci této úlohy) identifikátor vlajky                                  | `file-perms-check1`
+| type            | Číslo označující druh vlajky<br>Je nutné uvést `type` jako `string` v uvozovkách!   | "4"
 
-## Dynamická vlajka
+### Dynamická vlajka
 
 Každá instance úlohy má unikátně vygenerované vlajky tak, aby se zamezilo podvádění. Jejich unikátnost je zaručena vygenerováním náhodného řetězce, kterým jsou nahrazeny všechny výskyty **placeholder**u ve všech souborech v repozitáři scénáře. Aby nedošlo k nechtěné záměně, jsou všechna místa určená k nahrazení ohraničena znaky `#@{{'{{'}}` a `}}@#`. Právě **placeholder** slouží autorovi úlohy k označení a odlišení jednotlivých míst.
 
@@ -75,12 +79,12 @@ Specifika pro vlajky tohoto typu:
 
 | název parametru | popis parametru | příklad |
 |-----------------|-----------------|---------|
-| type            | 1, označuje tento typ vlajky | 1 |
+| type            | "1", označuje tento typ vlajky | "1" |
 | placeholder     | Zástupný řetězec znaků sloužící pro označení místa, do kterého se vloží unikátní vlajka | flag2 |
 | maximumTries    | Maximální možný počet pokusů pro odpověď | 3 |
 
 
-## Statická vlajka
+### Statická vlajka
 
 Tento druh vlajky mám pro všechny uživatele a ve všech instancích stejnou hodnotu.
 
@@ -88,18 +92,18 @@ Specifika pro vlajky tohoto typu:
 
 | název parametru | popis parametru | příklad |
 |-----------------|-----------------|---------|
-| type            | 2, označuje tento typ vlajky | 2 |
+| type            | "2", označuje tento typ vlajky | "2" |
 | answer          | Odpověď na úkol | flag{{'{'}}1234} |
 | maximumTries    | Maximální možný počet pokusů pro odpověď | 3 |
 
 
-## Vlajka s možností výběru odpovědi
+### Vlajka s možností výběru odpovědi
 
 Specifika pro vlajky tohoto typu:
 
 | název parametru | popis parametru | příklad |
 |-----------------|-----------------|---------|
-| type            | 3, označuje tento typ vlajky | 3 |
+| type            | "3", označuje tento typ vlajky | "3" |
 | maximumTries    | Maximální možný počet pokusů pro odpověď | 3 |
 | options         | Pole objektů možných odpovědí | viz níže |
 
@@ -110,19 +114,23 @@ Objekty odpovědí mají tuto strukturu:
 ```
 
 
-## Automaticky vyhodnocující se vlajka
+### Automaticky vyhodnocující se vlajka
 
 Pomocí `docker compose exec` se v definovaném **interval**u spouští definovaný příkaz **command** a podle návratové hodnoty **exitCode** procesu se určí, zda byla vlajka splněna. Možnost **container** určuje, ve kterém z možných kontejnerů se proces spustí.
 
 | název parametru | popis parametru | příklad |
 |-----------------|-----------------|---------|
-| type            | 4, označuje tento typ vlajky | 4 |
-| command         | Příkaz, který se spustí pro ověření splění úkolu | `bash -c '[ "$(cat /tmp/test.txt)" == "ahoj" ]'` |
+| type            | "4", označuje tento typ vlajky | "4" |
+| command         | Příkaz, který se spustí pro ověření splnění úkolu | `bash -c '[ "$(cat /tmp/test.txt)" == "ahoj" ]'` |
 | container       | Cílový kontejner, ve kterém se příkaz bude spouštět | server |
 | shell           | Shell, ve kterém je příkaz spouštěn | sh |
 | user            | Uživatel, pod kterým se příkaz spouští | root |
 | interval        | Interval, ve kterém dochází ke spuštění příkazu | 2000 |
 | exitCode        | Návratový kód **command**u, který bude považován za úspěch pro splnění vlajky | 0 |
+
+Parametr `interval` je měřen v milisekundách.
+
+Pokud bude jako hodnota `interval`u uvedena 0, `command` nebude prováděn automaticky, ale v zadání úlohy se objeví tlačítko, kterým si ho řešitelé mohou spustit manuálně. Toto je vhodné pro náročné příkazy, jejichž vyhodnocení trvá dlouho nebo vyžaduje hodně prostředků.
 
 ## Ukázkový soubor `challenge.yaml`
 
@@ -161,9 +169,9 @@ flags:
     identifier: "choice-flag1"
     maximumTries: 2
     options:
-      - value: správná odpověd
+      - value: správná odpověď
         correct: true
-      - value: chybná odpověd
+      - value: chybná odpověď
         correct: false
   - name: /tmp/test.txt
     description: Do souboru /tmp/test.txt zapiš text "ahoj".
@@ -187,12 +195,12 @@ Tímto souborem jsme schopni definovat, jaká infrastruktura se pro úlohu spust
 V souboru docker-compose není možné
 - Eskalovat práva kontejneru
     - Vytvářet privilegované kontejnery
-    - Přidávat kontejnerům systémové schopnosti (SYStem capabilities)
+    - Přidávat kontejnerům systémové schopnosti (system capabilities)
 - Mountovat adresáře a soubory (vše potřebné by mělo být do kontejneru přidáno v build fázi)
 
 ## Signalizace úspěšného nastartování scénáře
 
-Je nutné systém informovat o tom, že je scénář spuštěný a vše je připaveno. Tuto informaci je možné systému sdělit tím, že do `stdout` entrypointu/commandu libovolného commandu definovaného v docker-compose souboru vypíšete řetězec `SCENARIO_IS_READY`.
+Je nutné systém informovat o tom, že je scénář spuštěný a vše je připraveno. Tuto informaci je možné systému sdělit tím, že do `stdout` entrypointu/commandu libovolného commandu definovaného v docker-compose souboru vypíšete řetězec `SCENARIO_IS_READY`.
 
 ## Ukázkový docker-compose.yml
 ```yaml
@@ -210,7 +218,7 @@ services:
 --- 
 <br>
 
-# `Vagrantfile`
+<!-- # `Vagrantfile`
 
 Vagrantfile je konfigurační soubor pro [Vagrant](https://www.vagrantup.com/), který se používá k nastavení virtuálního prostředí pro vaši úlohu. Tento soubor by měl být umístěn ve stejné složce jako `challenge.yaml`.
 
@@ -258,25 +266,29 @@ Vagrant.configure("2") do |config|
     }
   end
 end
-```
+``` -->
+
+
 
 # `THEORY.md`
 Zde jsou předávány teoretické znalosti bez vazby na obsah úlohy.
-::: info
-TBD
-<!-- TODO: -->
-:::
+
+Je *důrazně* doporučeno používat správné Markdown formátování pro zvýšení přehlednosti.
+
 # `DESCRIPTION.md`
+Úvod k řešení vlajek. Často zde bývá zopakování příběhu úlohy (pokud nějaký je), nebo poznámka o speciálních nestandardních nástrojích, které je možné při řešení využít.
+
 
 # `HANDBOOK.md`
-::: info
-TBD
-<!-- TODO: -->
-:::
+Do Příručky patří návod k vyřešení celé úlohy, je viditelná pouze pro učitele.
+
+Také je možné uvést poznámky pro učitele, jak dobře vysvětlit danou látku či na co poukázat.
+
+<br>
 
 # Další konvence pro tvorbu zadání
 ## Technické informace a kód
-Části textu obsahující nejakou technickou informaci, např.:
+Části textu obsahující nějakou technickou informaci, např.:
 - definici subnetu - `192.168.40.0/24`
 - příkazy - `find --name file`
 - parametr - `--sevice-scan`
@@ -286,7 +298,5 @@ Pokud vkládáme delší kód (např. snippet v bashi, nebo jiném programovací
 \`\`\`jazyk  
 // kód  
 \`\`\`  
-Jméno programovacího jazyka se vloží za první tři zpětné apostrofy, místo slova `jazyk`. 
-<!-- Kompletní seznam jazyků podporovaných na zvýraznění syntaxe je [zde] -->
-<!-- TODO: ten seznam -->
-
+Jméno programovacího jazyka se vloží za první tři zpětné apostrofy, místo slova `jazyk`.  
+Kompletní seznam podporovaných jazyků na zvýraznění syntaxe je [zde](https://highlightjs.readthedocs.io/en/latest/supported-languages.html).

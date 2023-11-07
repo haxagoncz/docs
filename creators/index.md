@@ -24,11 +24,3 @@ features:
     details: Vychytávky, které lze použít při psaní popisu
 
 ---
-
-<br>
-<br>
-<p style="text-align: center;">
-
-Zde pravděpodobně ještě dojde ke změnám v rozložení stránek.
-
-</p>

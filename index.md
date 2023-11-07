@@ -18,10 +18,10 @@ features:
     link: teachers/
     title: Učitelé
     details: Zadávání a vyhodnocování úloh
-  - icon: 🛡️
-    link: admins/
-    title: Školní administrátoři
-    details: Správa systému
+  # - icon: 🛡️
+  #   link: admins/
+  #   title: Školní administrátoři
+  #   details: Správa systému
   - icon: 🛠
     link: creators/
     title: Tvůrci úloh
