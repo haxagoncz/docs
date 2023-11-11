@@ -1,5 +1,5 @@
 # Challenge specification
-The challenge specification defines the information about the challenge, it's
+The challenge specification defines the information about the challenge, its
 title, description, and even flags. The YAML format is used for challenges,
 as it is simply readable by anyone, even if you don't understand the format's
 specification.

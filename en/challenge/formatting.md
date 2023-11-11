@@ -10,14 +10,14 @@ and how to use them.
 
 ## The \<ip> placeholder
 The IP placeholder is very simple, every `<ip>` in the description, gets
-replaced with the challenge IP once it is started, if it isn't running, the ip
+replaced with the challenge IP once it is started. If the challenge isn't running, the ip
 block will get replaced for `[ip]` text. 
 
 ## Asciinema player
 Since most of our challenges need you to use the terminal, it might be necessary to teach people how to use some commands. With asciinema, you can add a video player-like terminal!  
 Thanks to [`asciinema-ce`](https://github.com/haxagoncz/asciinema-ce) you can just insert an `<asciinema-player>` element into the markup and everything else will be handled for you.
 
-```md
+```html
 <asciinema-player src="28307"></asciinema-player>
 ```
 
@@ -28,7 +28,7 @@ You can also define extra options with the `options` attribute. (A string with j
 With the \<ip> placeholder, you might be wondering how to show your custom message when the challenge isn't running or doesn't have IP yet. That's where conditional rendering comes in, anything you put inside \<if> element that has a valid condition will only be shown if the condition is true.  
 Currently you can only use that for challenge's IP.
 
-```md
+```html
 This is normal text
 <if ip>
   This is only visible if the challenge has IP. (<ip>)
