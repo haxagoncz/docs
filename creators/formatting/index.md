@@ -1,7 +1,6 @@
 # Formátování popisu
 
-Různá pole ve [specifikaci úlohy]() umožňují využívat Markdown k formátování textu. Markdown je doporučené využívat zvláště v dlouhých textech a popisech, kde značně zvyšuje čitelnost.
-<!-- TODO: odkaz na stránku o formátu specifikace úlohy -->
+Různá pole ve [specifikaci úlohy](../overview/index.md) umožňují využívat Markdown k formátování textu. Markdown je doporučené využívat zvláště v dlouhých textech a popisech, kde značně zvyšuje čitelnost.
 
 Kromě Markdownu HAXAGON umožňuje v textech úlohy využívat další speciální funkce, jako Zástupce IP adresy nebo Asciinema přehrávač.
 
