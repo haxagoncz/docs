@@ -145,10 +145,13 @@ Pomocí `docker compose exec` se v definovaném **interval**u spouští definova
 | user            | Uživatel, pod kterým se příkaz spouští | root |
 | interval        | Interval, ve kterém dochází ke spuštění příkazu | 2000 |
 | exitCode        | Návratový kód **command**u, který bude považován za úspěch pro splnění vlajky | 0 |
+| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky. | `file-perms-check1` |
 
 Parametr `interval` je měřen v milisekundách.
 
-Pokud bude jako hodnota `interval`u uvedena 0, `command` nebude prováděn automaticky, ale v zadání úlohy se objeví tlačítko, kterým si ho řešitelé mohou spustit manuálně. Toto je vhodné pro náročné příkazy, jejichž vyhodnocení trvá dlouho nebo vyžaduje hodně prostředků.
+Pokud bude jako hodnota `interval` uvedena 0, `command` nebude prováděn automaticky, ale v zadání úlohy se objeví tlačítko, kterým si ho řešitelé mohou spustit manuálně. Toto je vhodné pro náročné příkazy, jejichž vyhodnocení trvá dlouho nebo vyžaduje hodně prostředků.
+
+Pokud pole `requiredFlags` obsahuje pouze jeden prvek, zapisuje se jako `requiredFlags: "file-perms-check1"`. Pokud obsahuje více prvků, je třeba hodnoty zapsat jako YAML sekvenci. Pokud není třeba splnění vlajky podmiňovat jinou vlajkou, `requiredFlags` se neuvádí vůbec.
 
 ## Ukázkový soubor `challenge.yaml`
 
