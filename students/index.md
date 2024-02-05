@@ -24,4 +24,10 @@ features:
     title: Troubleshooting
     details: Řešení na běžné problémy
 
+  - icon: ⚔️ #TODO: ikona podle actual SVG ikony battlefieldu, podle https://vitepress.dev/reference/default-theme-home-page#features-section
+    link: ./battlefield/
+    title: Battlefield
+    details: Soutěže v Battlefieldu
+
+
 ---
