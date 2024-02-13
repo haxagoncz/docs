@@ -11,24 +11,27 @@ Pro přístup do Battlefieldu je nutné akceptovat podmínky užití<!--[Podmín
 # Úvodní obrazovka
 Na první obrazovce je vidět přehled postupu uživatele v rámci soutěžení a osobního růstu.
 
-## Úroveň
-Za každou vlajku každé úlohy je možné získat určitý počet Zkušenostních bodů (XP). <!--TODO: možná sem dát inline ikonku těch zlatých XP, aby bylo lépe vidět, o čem se mluví? -->
+[![Screenshot úvodní obrazovky Battlefieldu s jednotlivými sekcemi.](./BattlefieldOverview.png)](BattlefieldOverview.png)
+
+
+## 1 – Úroveň
+Za každou vlajku každé úlohy je možné získat určitý počet Zkušenostních bodů <img style="display:inline;" src="./xpIcon.svg" alt=""/> (XP).
 
 Jejich akumulací uživatel získává úrovně, které se následně ukazují u jeho jména. V této dlaždici je také vidět přehled získaných XP (a kolik zkušenostních bodů je celkem aktuálně možné získat) a počet splněných úloh (z celkového počtu dostupných).
 
-## Týdenní aktivita
+## 2 – Týdenní aktivita
 Za každý týden, kdy uživatel splní alespoň jednu úlohu, se zabarví odpovídající hexagon. Cílem řešitele může být kompletně zelená plástev!
 
-## Exp Historie
-Vedle týdenní aktivity se nacházejí 3 nejnovější vlajky, které uživatel vyřešil. 
+## 3 – Exp Historie
+Vedle týdenní aktivity se nacházejí 3 nejnovější vlajky, které uživatel vyřešil a body <img style="display:inline;" src="./xpIcon.svg" alt=""/>, které za ně získal. 
 <!--TODO: Až budou firstbloody, doplnit, že je to vlastně souhrn XP a ne jen vlajek -->
 
 
-## Žebříčky
+## 4 – Žebříčky
 Jedna z ústředních částí zóny Battlefield jsou žebříčky, které ukazují nejlepší studenty ve škole, kraji a celé České republice.  
-Studenti jsou řazeni podle množství XP,<!-- sem bych taky možná dal ikonku --> které získali za řešení jednotlivých úloh. U každého studenta se také ukazuje škola, kterou navštěvuje a úroveň jeho účtu.
+Studenti jsou řazeni podle množství XP <img style="display:inline;" src="./xpIcon.svg" alt=""/>, které získali za řešení jednotlivých úloh. U každého studenta se také ukazuje škola, kterou navštěvuje a úroveň jeho účtu.
 
-## Mapa České republiky
+## 5 – Mapa České republiky
 Mapou je možné ovládat, která data jsou zobrazena v žebříčcích, konkrétně v záložce "Kraj".
 
 Při najetí kurzorem na jednotlivý kraj se zobrazí jednoduché shrnutí, kolik je v daném kraji škol zapojených do Battlefieldu a celkový počet studentů v těchto školách, soutěžících v rámci Battlefieldu.
@@ -46,7 +49,7 @@ Každá dlaždice obsahuje všechny informace, které student potřebuje k rozho
 - Krátký popisek
 - Obtížnost (<span style="color:#4cc274">Začátečník</span> → <span style="color:#cf3a4e">Mistr</span>)
 - Počet vlajek v úloze
-- Celkový počet XP, které je možné získat za vyřešení celé úlohy
+- Celkový počet XP <img style="display:inline;" src="./xpIcon.svg" alt=""/>, které je možné získat za vyřešení celé úlohy
 
 Kliknutím na dlaždici je možné se přesunout detail úlohy, kde je možné ji začít řešit.
 
