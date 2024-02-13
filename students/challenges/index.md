@@ -5,7 +5,7 @@ Detail úlohy vypadá zhruba takto (ne všechny úlohy mají nutně všechny prv
 
 Stránka se skládá z několika hlavních částí:
 
-## 1. Infobox
+## 1 – Infobox
 Zcela nahoře se nacházejí základní informace o úloze
 - Jméno
 - Datum, kdy ji student dostal zadanou
@@ -18,10 +18,10 @@ Zcela nahoře se nacházejí základní informace o úloze
     Tento čas se počítá pouze, když úloha běží.
     :::
 
-## 2. Přehled
+## 2 – Přehled
 V pravé části se nachází seznam nadpisů v Teorii a seznam vlajek. Pro rychlejší nevigaci úlohou je možné na libovolnou vlajku nebo nadpis kliknout a stránka se posune na odpovídající místo.
 
-## 3. Připojení
+## 3 – Připojení
 Vpravo od záložek Teorie, Vlajky a Řešitelé se nacházejí informace o připojení k úloze. Ty se otevírají kliknutím na text <span style="color:#4cc274">🔌 Připojení</span>.
 
 ![Screenshot pop-upu s informacemi pro připojení](./Connection.png)
@@ -40,14 +40,14 @@ Můžete si povšimnout, že naprosté většině případů jsou IP adresy ve f
 
 V některých případech bude možnost vybrat připojení přes veřejnou IP adresu. Po zakliknutí této možnosti není nutné být připojený na VPN.
 
-## 4. Teorie
+## 4 – Teorie
 V prostřed stránky se nacházejí 3 záložky, které obsahují hlavní náplň stránky.
 
 V záložce Teorie jsou teoretické informace k řešení úlohy. U úloh pro výuku zde bude zpravidla vysvětlená látka, které se úloha věnuje.
 
 U testových úloh a u úloh v soutěžích často záložka Teorie chybí a místo toho je krátký doporovodný text přímo v záložce Vlajky.
 
-## 5. Vlajky
+## 5 – Vlajky
 Zde se řeší a odevzdávají jednotlivé dílčí úkoly úlohy, tzv. vlajky.
 
 Jméno pochází z CTF (Capture The Flag) soutěží, kde se hledají právě různé vlajky. Zde je stejně řešený jeden typ vlajek, a to ty textové. Více o typech vlajek dále.
@@ -87,7 +87,7 @@ Tento typ vlajek nemá na rozdíl od předešlých dvou povolený počet pokusů
 Méně častý typ vlajky, ale funguje velmi podobně jako Automatické vlajky. Jediným rozdílem je, že se kontrolovací příkazy spouští až po kliknutí na tlačítko, tudíž se používá na kontrolu složitých věcí, které by zbytečně zatěžovaly systém, pokud by se prováděly neustále.
 
 
-## 6. Řešitelé
+## 6 – Řešitelé
 V poslední záložce se nachází seznam uživatelů z aktuální skupiny, kteří již úlohu vyřešili, spolu s body, které zatím získali.
 
 Toto zobrazení se liší od [Žebříčku](/students/basics/#zebricky) tím, že je zde lépe vidět, jak se komu na úloze daří.
