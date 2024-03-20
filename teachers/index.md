@@ -24,4 +24,9 @@ features:
     title: Getting started
     details: První kroky k výuce
 
+  - icon: 🌤
+    link: ./white-mode/
+    title: Světlý mód
+    details: Nastavení světlého módu rozhraní platformy
+
 ---
