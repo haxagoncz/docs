@@ -4,7 +4,7 @@ Jelikož může být běžné zobrazení stránky HAXAGON nečitelné na někter
 
 Tato možnost zvýší kontrast textu v popiscích úloh (pozadí na bílo, text na černo).
 
-Světlý mód je možné zapnout v uživatelských nastaveních, které otevřete kliknutím na své jméno a profilový obrázek v levém dolním rohu a vybráním možnosti "Nastavení".  
+Světlý mód je možné zapnout v uživatelském nastavení, které otevřete kliknutím na své jméno a profilový obrázek v levém dolním rohu a vybráním možnosti "Nastavení".  
 Ve spodní části nastavení se nachází možnost "Mód zobrazení", kde pro světlý režim vyberte "Projektor".
 
 ![](./white-mode.png)

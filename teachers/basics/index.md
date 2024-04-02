@@ -171,3 +171,20 @@ Tento krok je možné vrátit opětovným vybráním uživatele v seznamu a tla�
 ## Odebrání uživatelů ze skupiny
 Kdykoliv je možné vybrat studenta či učitele a odebrat ho ze skupiny kliknutím na odpovídající tlačítko "Odebrat Vybrané" nad tabulkou.  
 Toto nesmaže uživatele ze systému, pouze bude odebrán ze skupiny. Pro jeho opětovné přidání viz [Přidávání uživatelů do skupin](#pridavani-uzivatelu-do-skupin).
+
+# Export statistik
+V postranním menu v kategorii "Spravovat" se nachází také možnost "Statistiky". Tato stránka umožňuje učitelům exportovat různá data o svých studentech a jejich postupu ve výuce.
+
+Po vybrání skupiny (nebo skupin) v levé části obrazovky se zpřístupní menu, umožňující omezit, které úlohy budou do exportu zahrnuty. Jejich status je možné snadno přepínat kliknutím na jejich jméno.
+
+Ve spodní části obrazovky se nastavuje časový rozsah, který se bere v úvahu při exportu dat.
+> Pokud není nastavený horní ani spodní limit, budou vyexportována data za celé období používání platformy HAXAGON.
+
+Po nastavení všech parametrů a omezení exportu stačí stisknout jedno z tlačítek zcela dole na stránce: Export ve formátu JSON, ODS nebo XLSX.
+
+<!-- 
+Exportovaná data obsahují
+
+TODO: popsat, co všechno tam je, až to bude fungovat
+
+-->

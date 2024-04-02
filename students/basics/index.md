@@ -15,8 +15,13 @@ Navigační menu v levé části obsahuje několik podstránek. Pro studenty to 
 - [Přehled](#prehled)
 - [Katalog](#katalog)
 - [Žebříčky](#zebricky)
-- [Nastavení](#nastaveni)
-- [VPN Konfigurace](#vpn-konfigurace)
+- [Battlefield](../battlefield/index.md)
+- [Dokumentace](/)
+- [Discord](https://discord.gg/Z3bn4EyE3H)
+- Profil, který po rozkliknutí zpřístupní možnosti:
+    - [Nastavení](#nastaveni)
+    - [VPN Konfigurace](#vpn-konfigurace)
+    - Odhlásit se
 
 ## Přehled
 
@@ -68,18 +73,20 @@ Pro přístup na [komunitní Discord server](https://discord.gg/Z3bn4EyE3H) je p
 
 Pro propojení klikněte na tlačítko s logem Discord vlevo nahoře. To Vás přesměruje na stránky discord.com, kde povolíte přístup ke jménu Vašeho účtu. Pokud nejste v prohlížeči přihlášení do Discordu, budete se muset přihlásit.
 
-Po propojení účtů můžete pokračovat na Discord server a řídit se pokyny pro ověření napsanými v kanálu #verification.
+Po propojení účtů můžete pokračovat na Discord server a řídit se pokyny pro ověření napsanými v kanálu [#verification](https://ptb.discord.com/channels/1045285681536180255/1111758661128290325).
 
 ### Avatar
-Avatar si lze vybrat z několika předvytvořených možností. Nahrávání vlastních obrázků možné není.  
+Avatar si lze vybrat z několika předvytvořených možností, které se zpřístupní po kliknutí na na aktuální profilový obrázek. Nahrávání vlastních fotek možné není.  
 Uživatelský avatar se poté zobrazuje na několika místech: V Žebříčcích, v seznamu řešitelů úlohy a učitelé ho vidí v seznamu svých studentů.
 
 ### Nastavení Platformy
 Webová stránka HAXAGON je dostupná jak v češtině, tak v angličtině. Pokud někde naleznete chybějící překlad, nahlaste ho, prosím, na našem [discord serveru](https://discord.gg/Z3bn4EyE3H).
 
 ### Připojení
-Zde je možnost nastavit výchozí způsob připojení k úlohám. Možnost "VPN" je to, na co jsou dlouhodobější uživatelé zvyklí (je nutné si nastavit VPN do HAXAGON sítě, viz [VPN Konfigurace](#vpn-konfigurace)), možnost "Veřejná IP" poskytne studentovi při připojování možnost použít veřejnou IP jednoho ze serverů, tudíž umožňuje připojení i na zařízeních, na kterých VPN není nastavená.
+Zde je možnost nastavit výchozí způsob připojení k úlohám. Možnost "VPN" je to, na co jsou dlouhodobější uživatelé zvyklí (je nutné si nastavit VPN do HAXAGON sítě, viz [VPN Konfigurace](#vpn-konfigurace)), možnost "Veřejná IP" poskytne studentovi při připojování možnost použít veřejnou IP jednoho ze serverů, tudíž umožňuje připojení i ze zařízení, na kterých VPN není nastavená.
 
+### Mód zobrazení
+Pro běžné používání je silně doporučený Normální mód (tmavý), ale v situacích, kdy je obrazovka platformy HAXAGON promítána na příklad na méně kontrastních projektorech, může být vhodnější použít světlý projektor mód. 
 
 ## VPN Konfigurace
 
