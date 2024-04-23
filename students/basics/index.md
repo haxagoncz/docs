@@ -77,20 +77,22 @@ Po propojení účtů můžete pokračovat na Discord server a řídit se pokyny
 
 ### Avatar
 Avatar si lze vybrat z několika předvytvořených možností, které se zpřístupní po kliknutí na na aktuální profilový obrázek. Nahrávání vlastních fotek možné není.  
-Uživatelský avatar se poté zobrazuje na několika místech: V Žebříčcích, v seznamu řešitelů úlohy a učitelé ho vidí v seznamu svých studentů.
+Uživatelský avatar se poté zobrazuje na několika místech: V Žebříčcích, v seznamu řešitelů úlohy a učitelé ho vidí v seznamu svých studentů. Pokud se student a škola účastní [Battlefieldu](/students/battlefield/index.md), avatar se zobrazuje v žebříčku i tam.
 
-### Nastavení Platformy
+### Jazyk
 Webová stránka HAXAGON je dostupná jak v češtině, tak v angličtině. Pokud někde naleznete chybějící překlad, nahlaste ho, prosím, na našem [discord serveru](https://discord.gg/Z3bn4EyE3H).
 
 ### Připojení
-Zde je možnost nastavit výchozí způsob připojení k úlohám. Možnost "VPN" je to, na co jsou dlouhodobější uživatelé zvyklí (je nutné si nastavit VPN do HAXAGON sítě, viz [VPN Konfigurace](#vpn-konfigurace)), možnost "Veřejná IP" poskytne studentovi při připojování možnost použít veřejnou IP jednoho ze serverů, tudíž umožňuje připojení i ze zařízení, na kterých VPN není nastavená.
+Zde je možnost nastavit výchozí způsob připojení k úlohám.  
+Doporučené je používat možnost "Veřejná IP".  
+V&nbsp;některých vzácnějších případech může být nutné použít k připojení možnost "VPN", například pokud jsou ve školních sítích blokované některé síťové protokoly (SSH aj.). V takovém případě je třeba nastavit VPN a stáhnout přihlašovací údaje k tunelu, viz [VPN Konfigurace](#vpn-konfigurace).
 
 ### Mód zobrazení
 Pro běžné používání je silně doporučený Normální mód (tmavý), ale v situacích, kdy je obrazovka platformy HAXAGON promítána na příklad na méně kontrastních projektorech, může být vhodnější použít světlý projektor mód. 
 
 ## VPN Konfigurace
 
-Pro připojení do úloh je potřeba využít VPN a připojit se do sítě HAXAGONu.
+Pro připojení do většiny úloh je možné se připojit pomocí veřejných IP adres, pro některé ale může být nutné využít VPN.
 
 Stránka VPN Konfigurace obsahuje všechny potřebné informace k nastavení VPN na Vašem oblíbeném operačním systému. Možnost pro váš aktuálně používaný operační systém by se měla detekovat automaticky, zvýraznit a zobrazit v seznamu na prvním místě. Pokud se toto nestane, jednoduše vyberte svůj OS ze seznamu a klikněte na tlačítko "Nastavit VPN".
 
