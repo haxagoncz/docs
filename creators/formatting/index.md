@@ -19,6 +19,18 @@ Díky [`asciinema-ce`](https://github.com/haxagoncz/asciinema-ce) je možné pou
 ```
 Hodnota atributu `src` je id záznamu nahraného na https://asciinema.org/. Je také možné specifikovat další možnosti atributem `options` ve formátu textu s JSONem. Seznam možností je k nalezení v [oficiální dokumentaci](https://asciinema.org/docs/embedding) [anglicky].
 
+## Vkládání kódu
+
+Pokud vkládáme delší kód (např. snippet v bashi, nebo jiném programovacím jazyce), zaobalíme ho do víceřádkového code bloku se zvýrazňováním syntaxe:
+
+    ```jazyk
+    // kód
+    ```
+
+Jméno programovacího jazyka se vloží za první tři zpětné apostrofy, místo slova `jazyk`.  
+Kompletní seznam podporovaných jazyků na zvýraznění syntaxe je [zde](https://highlightjs.readthedocs.io/en/latest/supported-languages.html).
+
+
 ## Podmíněné renderování
 
 Spolu se zástupcem `<ip>` může být potřeba zobrazit nějaký text až když je úloha spuštěná a má vygenerovanou IP adresu. V tu chvíli přichází na řadu podmíněné zobrazování textu: vše ve vlastním html tagu `<if> </if>` který má platnou podmínku bude zobrazenou pouze, pokud se hodnota podmínky rovná `true`.
@@ -38,3 +50,30 @@ Toto je normální text.
     Je možné použít i testování na hodnotu true pro zobrazování textu jen u spuštěné úlohy.
 </if>
 ```
+
+## LaTeX
+
+V markdown souborech je možné využít LaTeX syntaxi pro zobrazení matematických výrazů. (Konkrétně díky balíčkům [remark-math](https://github.com/remarkjs/remark-math) a [rehype-katex](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex)).
+
+LaTeX kód vložte mezi znaky dolaru (`$4\times10^2=400$`) pro inline vložení, nebo je možné použít [code blok](#vkladani-kodu) a jako "programovací jazyk" použít `math`.
+
+Více informací o LaTeXu a KaTeXu je možné najít třeba zde: https://katex.org/docs/supported, https://www.overleaf.com/learn/latex/Mathematics.
+
+## Mermaid.JS
+
+V markdown souborech je také možné používat `mermaid` code bloky pro zobrazení všelijakých diagramů a grafů. Kupříkladu:
+
+    ```mermaid
+    flowchart LR
+        Zpráva-->enc
+        vk_alice[VK Alice]-->enc((Šifrování))
+        enc-->msg[Zašifrovaná zpráva]
+        msg-->dec((Dešifrování))
+        sk_alice[SK Alice]-->dec
+        dec-->Hash
+    ```
+se zobrazí jako: 
+
+![Formátovaný flowchart graf, který vznikne naparsováním předešlého kódu.](MermaidResult.png)
+
+Všechny detaily o typech diagramů a syntaxi je možné najít v oficiální dokumentaci: https://mermaid.js.org/intro/.

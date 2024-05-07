@@ -320,16 +320,11 @@ Také je možné uvést poznámky pro učitele, jak dobře vysvětlit danou lát
 <br>
 
 # Další konvence pro tvorbu zadání
-## Technické informace a kód
+## Technické informace a formátování
 Části textu obsahující nějakou technickou informaci, např.:
 - definici subnetu - `192.168.40.0/24`
 - příkazy - `find --name file`
 - parametr - `--sevice-scan`
 a podobné zaobalíme do code highlight bloku pomocí znaku \`
 
-Pokud vkládáme delší kód (např. snippet v bashi, nebo jiném programovacím jazyce), zaobalíme ho do víceřádkového code bloku se zvýrazňováním syntaxe:  
-\`\`\`jazyk  
-// kód  
-\`\`\`  
-Jméno programovacího jazyka se vloží za první tři zpětné apostrofy, místo slova `jazyk`.  
-Kompletní seznam podporovaných jazyků na zvýraznění syntaxe je [zde](https://highlightjs.readthedocs.io/en/latest/supported-languages.html).
+Další tipy k formátování naleznete na [dedikované stránce](../formatting/index.md).
