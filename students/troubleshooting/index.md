@@ -22,7 +22,7 @@ Pokud úloha běží, ale nedaří se Vám na ni připojit, je několk kroků, k
 
 - **Zkontrolovat status VPN**  
     Pokud se připojujete k úloze přes VPN, zkontrolujete, zda je tunel spuštěný.  
-    Dále zkontrolujte, že se připojujete na VPN správného účtu. Nejjednodušší je smazat aktuální tunel a stáhnout novou konfiguraci ze stránky [VPN konfigurace](../basics/index.md#vpn-konfigurace).
+    Dále zkontrolujte, že se připojujete na VPN správného účtu. Nejjednodušší je smazat aktuální tunel a stáhnout novou konfiguraci ze stránky [VPN konfigurace](/students/basics/index.md#vpn-konfigurace).
 
 - **Změnit způsob připojení k úloze**  
     Pokud se pokoušíte připojit přes VPN, zkuste připojení pomocí veřejné IP a opačně.

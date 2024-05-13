@@ -36,9 +36,9 @@ Velmi často takové úlohy mají i alternativní možnost připojení, a to př
 
 Dále je zde možnost zkopírovat IP adresu zařízení, na kterém je úloha, nebo rovnou i celý příkaz na připojení. (Opět záleží na dostupných typech přístupu, podle úlohy.)
 
-Můžete si povšimnout, že naprosté většině případů jsou IP adresy ve formátu `192.168.30.x`. To znamená, že to jsou adresy ze soukromého rozsahu a nejsou dostupné volně z internetu. K připojení na takové úlohy je třeba být připojen na HAXAGON VPN. Více informací o nastavení je na [stránce o základním používání platformy](/students/basics/#vpn-konfigurace).
+K většině z úloh je možné se **připojit přes veřejnou IP adresu**. Po zakliknutí této možnosti v sekci *Připojení* (pakliže není vybrána jako výchozí) **není nutné být připojený na VPN**.
 
-> K většině z úloh je možné se **připojit přes veřejnou IP adresu**. Po zakliknutí této možnosti v sekci *Připojení* (pakliže není vybrána jako výchozí) **není nutné být připojený na VPN**.
+> Pokud se vám nedaří připojit k úloze s chybou podobnou "Destination net unreachable" a IP adresa je `192.168.30.XXX`, pravděpodobně máte zapnuté připojení pomocí VPN. Pokud úloha neposkytuje možnost využít veřejnou IP adresu, je třeba nastavit na svém zařízení připojení k HAXAGON VPN podle kroků na [stránce o konfiguraci VPN](/students/basics/index.md#vpn-konfigurace).
 
 ## 4 – Teorie
 V prostřed stránky se nacházejí 3 záložky, které obsahují hlavní náplň stránky.
