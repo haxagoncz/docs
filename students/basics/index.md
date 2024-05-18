@@ -76,7 +76,7 @@ Pro propojení klikněte na tlačítko s logem Discord vlevo nahoře. To Vás p�
 Po propojení účtů můžete pokračovat na Discord server a řídit se pokyny pro ověření napsanými v kanálu [#verification](https://ptb.discord.com/channels/1045285681536180255/1111758661128290325).
 
 ### Avatar
-Avatar si lze vybrat z několika předvytvořených možností, které se zpřístupní po kliknutí na na aktuální profilový obrázek. Nahrávání vlastních fotek možné není.  
+Avatar si lze vybrat z několika předvytvořených možností, které se zpřístupní po kliknutí na aktuální profilový obrázek. Nahrávání vlastních fotek možné není.  
 Uživatelský avatar se poté zobrazuje na několika místech: V Žebříčcích, v seznamu řešitelů úlohy a učitelé ho vidí v seznamu svých studentů. Pokud se student a škola účastní [Battlefieldu](/students/battlefield/index.md), avatar se zobrazuje v žebříčku i tam.
 
 ### Jazyk

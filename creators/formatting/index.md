@@ -53,7 +53,7 @@ Toto je normální text.
 
 ## LaTeX
 
-V markdown souborech je možné využít LaTeX syntaxi pro zobrazení matematických výrazů. (Konkrétně díky balíčkům [remark-math](https://github.com/remarkjs/remark-math) a [rehype-katex](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex)).
+V markdown souborech je možné využít LaTeX syntaxi pro zobrazení matematických výrazů. (Konkrétně díky balíčkům [remark-math](https://github.com/remarkjs/remark-math) a [rehype-katex](https://github.com/remarkjs/remark-math/tree/main/packages/rehype-katex).)
 
 LaTeX kód vložte mezi znaky dolaru (`$4\times10^2=400$`) pro inline vložení, nebo je možné použít [code blok](#vkladani-kodu) a jako "programovací jazyk" použít `math`.
 

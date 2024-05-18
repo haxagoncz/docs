@@ -8,8 +8,8 @@ Velkou část problémů s platformou HAXAGON je často možné vyřešit někol
     V některých případech se nové události pouze nepropsaly do Vašeho zobrazení, takže stačí načíst stránku v prohlížeči znovu.  
     Toho lze dosáhnout několika způsoby, záleží na používaném prohlížeči. Obecně klávesou `F5`, `CTRL + R` nebo tlačítkem `⭮` v levém horním rohu prohlížeče.
 
-- **Znovu načíst web, spolu s keší**  
-    Pro znovunačtení některého obsahu (např. obrázky) nestačí běžný refresh stránky a je potřeba použít klávesové zkratky `SHIFT + F5` nebo `CTRL + SHIFT + R`.
+- **Znovu načíst web, spolu s cache**  
+    Pro znovunačtení některého obsahu (např. obrázků) nestačí běžný refresh stránky a je potřeba použít klávesové zkratky `SHIFT + F5` nebo `CTRL + SHIFT + R`.
 
 - **Odhlásit se a znovu se přihlásit**
 
@@ -18,7 +18,7 @@ Velkou část problémů s platformou HAXAGON je často možné vyřešit někol
 Obraťte se prosím na podporu na [Discord serveru](https://discord.gg/Z3bn4EyE3H), s velkou pravděpodobností je chyba na infrastruktuře HAXAGONu.
 
 ### K úloze se nedaří připojit
-Pokud úloha běží, ale nedaří se Vám na ni připojit, je několk kroků, které mohou pomoct.
+Pokud úloha běží, ale nedaří se Vám na ni připojit, je několik kroků, které mohou pomoct.
 
 - **Zkontrolovat status VPN**  
     Pokud se připojujete k úloze přes VPN, zkontrolujete, zda je tunel spuštěný.  
@@ -49,7 +49,7 @@ Kontaktujte nás na našem [Discord serveru](https://discord.gg/Z3bn4EyE3H).
 
 - Pokud žádný z předchozích kroků nepomáhá, kontaktujte nás na [Discord serveru](https://discord.gg/Z3bn4EyE3H).
 
-## Problémy při řešní úloh
+## Problémy při řešení úloh
 
 ### Něco jsem v úloze pokazil
 Pokud si v úloze něco rozbijete (smažete důležité soubory, programy atd.), je úlohu možné resetovat. To provedete zastavením a opětovným spuštěním úlohy.  

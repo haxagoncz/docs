@@ -7,7 +7,7 @@ Pro lepší porozumění si proto nejdříve projděte [studentskou sekci](./../
 
 # Odlišnosti od studentského rozhraní
 
-Učitelé vidí na některých stránkách více věcí, než studenti. V této sekci si probereme právě tyto rozdíly.
+Učitelé vidí na některých stránkách více věcí než studenti. V této sekci si probereme právě tyto rozdíly.
 
 ## Detail úlohy
 
@@ -33,7 +33,7 @@ Učitel má možnost zastavovat svým studentům běžící instance úlohy. Toh
 ![Screenshot tlačítka pro zastavení běžící úlohy studenta](./StopRunningInstance.png)
 
 - V levé části tabulky může zaškrtávacími políčky vybrat více studentů, kterým chce zastavit úlohu, což provede tlačítkem nad tabulkou.  
-  Toto se hodí třeba po hodině, když si studenti zapomenou vypnout úlohy - stačí zaškrtnou všechny studenty tlačítkem v hlavičce tabulky a hromadně instance zastavit.
+  Toto se hodí třeba po hodině, když si studenti zapomenou vypnout úlohy – stačí zaškrtnou všechny studenty tlačítkem v hlavičce tabulky a hromadně instance zastavit.
 
 #### Správa času
 Pokud učitel při [zadávání úlohy](#zadavani-uloh) v počátku špatně odhadl potřebný čas, nebo prostě jen studentům čas vypršel, může všem studentům resetovat čas na plnou původní hodnotu tlačítkem nad tabulkou.
