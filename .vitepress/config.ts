@@ -33,7 +33,15 @@ export default defineConfig({
       },
     ],
     i18nRouting: true,
-    outline: [1, 4]
+    outline: [1, 4],
+    search: {
+      provider: 'algolia',
+      options: {
+        appId: 'K6FMB17OQF',
+        apiKey: '0a71b1c308643ed1bb70d2d8f5a4161a',
+        indexName: 'haxagon'
+      }
+    }
   },
   locales: {
     /*en: {
@@ -44,5 +52,5 @@ export default defineConfig({
       label: 'Čeština',
       lang: 'cs',
     }
-  }
+  },
 })
