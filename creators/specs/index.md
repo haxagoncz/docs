@@ -65,6 +65,28 @@ U typu připojení `other` není povinné uvádět parametry `port`, `username` 
 
 Parametr `text` umožňuje využití Markdownu k formátování. Fungování víceřádkových textů v YAML je hezky vysvětleno na stránce [YAML-multiline.info](https://yaml-multiline.info/). 
 
+## `type`
+
+Typ úlohy. Tento údaj říká HAXAGONu jakým způsobem má k úloze přístupovat. Výchozí hodnotou je `docker`. Pokud tvoříte úlohu virtualizovanou pomocí dockeru, tak tento parametr nemusítě vůbec uvádět.
+
+Vabírat můžete z těchto možností:
+- **docker**: Úloha virtualizovaná pomocí dockeru
+- **quiz**: Nevirtualizovaná úloha
+- **sheets**: Úloha v prostředí Google Sheets
+
+## `googleSpreadSheetId`
+
+Google sheets document ID zdrojového dokumentu. Zdrojový dokument musí mít nastavené oprávnění čtení pro kohokoli s odkazem.
+Samotné ID pak lze získat z URL dokumentu.
+
+Pokud by url vypadala následnovně:
+```
+https://docs.google.com/spreadsheets/d/16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI/edit?gid=0#gid=0
+```
+
+Pak je ID: `16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI`.
+
+> Tento paramert zadávejte jen v případě, že úloha je typu `sheets`
 
 ## `flags`
 Vlajky se dělí do celkem 5 typů.
@@ -152,6 +174,17 @@ Parametr `interval` je měřen v milisekundách.
 Pokud bude jako hodnota `interval` uvedena 0, `command` nebude prováděn automaticky, ale v zadání úlohy se objeví tlačítko, kterým si ho řešitelé mohou spustit manuálně. Toto je vhodné pro náročné příkazy, jejichž vyhodnocení trvá dlouho nebo vyžaduje hodně prostředků.
 
 Pokud pole `requiredFlags` obsahuje pouze jeden prvek, zapisuje se jako `requiredFlags: "file-perms-check1"`. Pokud obsahuje více prvků, je třeba hodnoty zapsat jako YAML sekvenci. Pokud není třeba splnění vlajky podmiňovat jinou vlajkou, `requiredFlags` se neuvádí vůbec.
+
+### Vlajka automatické kontroly tabulek
+
+Skrze Google API se získají data z dokumentu tabulek. Ty jsou následně předány do izolovaného sandboxu, kde se provede kontrola úkolu.
+
+| název parametru | popis parametru | příklad |
+|-----------------|-----------------|---------|
+| type            | "5", označuje tento typ vlajky | "5" |
+| let             | Objekt proměnných, do kterých jsou uloženy hodnoty z odpovědi z Google API | `a: sheets.0.data.0.rowData.5.values.5.userEnteredValue.formulaValue` |
+| condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true. | condition: "a == 1" |
+| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky. | `file-perms-check1` |
 
 ## Ukázkový soubor `challenge.yaml`
 
