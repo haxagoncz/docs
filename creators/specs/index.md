@@ -183,7 +183,7 @@ Skrze Google API se získají data z dokumentu tabulek. Ty jsou následně před
 |-----------------|-----------------|---------|
 | type            | "5", označuje tento typ vlajky | "5" |
 | let             | Objekt proměnných, do kterých jsou uloženy hodnoty z odpovědi z Google API | `a: sheets.0.data.0.rowData.5.values.5.userEnteredValue.formulaValue` |
-| condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true. | condition: "a == 1" |
+| condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true. | "a == 1" |
 | requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky. | `file-perms-check1` |
 
 ## Ukázkový soubor `challenge.yaml`
