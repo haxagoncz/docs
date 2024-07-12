@@ -31,15 +31,40 @@ Tyto soubory jsou detailněji rozebrány v následujících sekcích.
 
 # `challenge.yaml`
 
-| název parametru  | popis parametru | povinný? |
+| název parametru  | popis parametru | povinný parametr |
 |------------------|-----------------|----------|
 | title            | Pojmenování úlohy | ANO |
 | shortDescription | Krátký popisek shrnující obsah úlohy | ANO |
+| difficulty       | Určení obtížnosti úlohy. Více o obtížnosti dále. | ANO |
+| image            | Url adresa obrázku, který slouží jako thumbnail | NE |
 | theory           | Relativní cesta k Markdown souboru s teorií k úloze | NE |
 | description      | Relativní cesta k Markdown souboru s popisem k vlajkám | NE |
 | handbook         | Relativní cesta k Markdown souboru s příručkou pro učitele | NE |
-| access           | Pole objektů definující možnosti připojení k úloze. Více o přístupu dále. | ANO |
+| type             | Typ úlohy. Více o typu úlohy dále. | NE |
+| tags             | Pole definující kategorizaci úlohy | NE |
+| access           | Pole objektů definující možnosti připojení k úloze. Více o přístupu dále. | NE |
 | flags            | Pole objektů definující vlajky, které budou součástí úlohy. Více o vlajkách dále. | ANO |
+
+## `difficulty`
+
+Vabírat můžete z těchto možností:
+- beginner
+- average
+- skilled
+- expert
+- master
+- unselected
+
+
+## `type`
+
+Typ úlohy. Tento údaj říká HAXAGONu jakým způsobem má k úloze přístupovat. Výchozí hodnotou je `docker`. Pokud tvoříte úlohu virtualizovanou pomocí dockeru, tak tento parametr nemusítě vůbec uvádět.
+
+Vabírat můžete z těchto možností:
+- **docker**: Úloha virtualizovaná pomocí dockeru
+- **quiz**: Nevirtualizovaná úloha
+- **sheets**: Úloha v prostředí Google Sheets
+
 
 ## `access`
 
@@ -64,29 +89,6 @@ V parametru `type` je možné použít jednu z těchto hodnot:
 U typu připojení `other` není povinné uvádět parametry `port`, `username` a `password`, většinou je ale naopak velmi využíván parametr `text` k vysvětlení nestandardního připojení.
 
 Parametr `text` umožňuje využití Markdownu k formátování. Fungování víceřádkových textů v YAML je hezky vysvětleno na stránce [YAML-multiline.info](https://yaml-multiline.info/). 
-
-## `type`
-
-Typ úlohy. Tento údaj říká HAXAGONu jakým způsobem má k úloze přístupovat. Výchozí hodnotou je `docker`. Pokud tvoříte úlohu virtualizovanou pomocí dockeru, tak tento parametr nemusítě vůbec uvádět.
-
-Vabírat můžete z těchto možností:
-- **docker**: Úloha virtualizovaná pomocí dockeru
-- **quiz**: Nevirtualizovaná úloha
-- **sheets**: Úloha v prostředí Google Sheets
-
-## `googleSpreadSheetId`
-
-Google sheets document ID zdrojového dokumentu. Zdrojový dokument musí mít nastavené oprávnění čtení pro kohokoli s odkazem.
-Samotné ID pak lze získat z URL dokumentu.
-
-Pokud by url vypadala následnovně:
-```
-https://docs.google.com/spreadsheets/d/16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI/edit?gid=0#gid=0
-```
-
-Pak je ID: `16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI`.
-
-> Tento paramert zadávejte jen v případě, že úloha je typu `sheets`
 
 ## `flags`
 Vlajky se dělí do celkem 5 typů.
@@ -186,10 +188,31 @@ Skrze Google API se získají data z dokumentu tabulek. Ty jsou následně před
 | condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true. | "a == 1" |
 | requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky. | `file-perms-check1` |
 
+## `googleSpreadSheetId`
+
+Google sheets document ID zdrojového dokumentu. Zdrojový dokument musí mít nastavené oprávnění čtení pro kohokoli s odkazem.
+Samotné ID pak lze získat z URL dokumentu.
+
+Pokud by url vypadala následnovně:
+```
+https://docs.google.com/spreadsheets/d/16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI/edit?gid=0#gid=0
+```
+
+Pak je ID: `16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI`.
+
+> Tento paramert zadávejte jen v případě, že úloha je typu `sheets`
+
 ## Ukázkový soubor `challenge.yaml`
 
 ```yaml
+# název úlohy
 title: Ukázková úloha
+
+# krátký popisek shrnující obsah úlohy
+shortDescription: Ukázková úloha
+
+# obtížnost úlohy
+difficulty: beginner
 
 # relativní cesta k souboru obsahující teorii k látce v úloze
 theory: './THEORY.md'
@@ -244,7 +267,7 @@ flags:
     points: 30
     type: "4"
     identifier: "file-content-check1"
-    command: "`bash -c '[ "$(cat /tmp/test.txt)" == "ahoj" ]'`"
+    command: "sh -c '[ \"$(cat /tmp/test.txt)\" == \"ahoj\" ]'"
     interval: 1000
     container: "server"
     exitCode: 0
@@ -270,8 +293,6 @@ Je nutné systém informovat o tom, že je scénář spuštěný a vše je přip
 
 ## Ukázkový docker-compose.yml
 ```yaml
-version: "3"
-
 services:
     webserver:
         image: nonbusybox
