@@ -30,7 +30,7 @@ jobs:
       - name: Log in to the Container registry
         uses: docker/login-action@v2
         with:
-          username: haxagon
+          username: haxagoninfrastructure
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: Extract Docker metadata
         id: meta
