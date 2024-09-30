@@ -6,7 +6,7 @@ hero:
     tagline: |- 
         Navigace platformou,
         Úlohy – zadávání, vyhodnocování
-        
+
 
 features:
   - icon: 👨‍🎓
@@ -28,5 +28,10 @@ features:
     link: ./white-mode/
     title: Světlý mód
     details: Nastavení světlého módu rozhraní platformy
+
+  - icon: 📆
+    link: ./new-year/
+    title: Začátek nového roku
+    details: Jak ideálně přejít se třídou mezi ročníky
 
 ---
