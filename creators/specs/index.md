@@ -31,19 +31,20 @@ Tyto soubory jsou detailněji rozebrány v následujících sekcích.
 
 # `challenge.yaml`
 
-| název parametru  | popis parametru | povinný parametr |
-|------------------|-----------------|----------|
-| title            | Pojmenování úlohy | ANO |
-| shortDescription | Krátký popisek shrnující obsah úlohy | ANO |
-| difficulty       | Určení obtížnosti úlohy. Více o obtížnosti dále. | ANO |
-| image            | Url adresa obrázku, který slouží jako thumbnail | NE |
-| theory           | Relativní cesta k Markdown souboru s teorií k úloze | NE |
-| description      | Relativní cesta k Markdown souboru s popisem k vlajkám | NE |
-| handbook         | Relativní cesta k Markdown souboru s příručkou pro učitele | NE |
-| type             | Typ úlohy. Více o typu úlohy dále. | NE |
-| tags             | Pole definující kategorizaci úlohy | NE |
-| access           | Pole objektů definující možnosti připojení k úloze. Více o přístupu dále. | NE |
-| flags            | Pole objektů definující vlajky, které budou součástí úlohy. Více o vlajkách dále. | ANO |
+| název parametru       | popis parametru                                                                       | typ                                           | povinný parametr
+|---------------------- | ------------------------------------------------------------------------------------- | --------------------------------------------- | ----------------
+| title                 | Pojmenování úlohy                                                                     | string                                        | ANO
+| shortDescription      | Krátký popisek shrnující obsah úlohy                                                  | string                                        | NE
+| difficulty            | Určení obtížnosti úlohy. Více o obtížnosti dále.                                      | [difficulty](#difficulty)                     | NE
+| image                 | Url adresa obrázku, který slouží jako thumbnail                                       | string                                        | NE
+| theory                | Relativní cesta k Markdown souboru s teorií k úloze                                   | string                                        | NE
+| description           | Relativní cesta k Markdown souboru s popisem k vlajkám                                | string                                        | NE
+| handbook              | Relativní cesta k Markdown souboru s příručkou pro učitele                            | string                                        | NE
+| type                  | Typ úlohy. Více o typu úlohy dále.                                                    | [type](#type)                                 | NE
+| tags                  | Pole definující kategorizaci úlohy                                                    | string[]                                      | NE
+| googleSpreadSheetId   | Google sheets document ID zdrojového dokumentu.                                       | [googleSpreadSheetId](#googlespreadsheetid)   | NE
+| access                | Pole objektů definující možnosti připojení k úloze. Více o přístupu dále.             | [access](#access)                             | NE
+| flags                 | Pole objektů definující vlajky, které budou součástí úlohy. Více o vlajkách dále.     | [flags](#flags)                               | ANO
 
 ## `difficulty`
 
@@ -66,16 +67,30 @@ Vabírat můžete z těchto možností:
 - **sheets**: Úloha v prostředí Google Sheets
 
 
+## `googleSpreadSheetId`
+Google sheets document ID zdrojového dokumentu. Zdrojový dokument musí mít nastavené oprávnění čtení pro kohokoli s odkazem.
+Samotné ID pak lze získat z URL dokumentu.
+
+Pokud by url vypadala následnovně:
+```
+https://docs.google.com/spreadsheets/d/16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI/edit?gid=0#gid=0
+```
+
+Pak je ID: `16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI`.
+
+> Tento paramert zadávejte jen v případě, že úloha je typu `sheets`
+
+
 ## `access`
 
 Základní formát objektů přístupu je tento:
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| type            | Typ připojení, viz dále. | "ssh" |
-| port            | Port, na který se mají řešitelé připojit. | 22 |
-| username        | Uživatelské jméno použité pro připojení. | student |
-| password        | Heslo použité v páru s uživatelským jménem. | heslo1234 |
-| text            | Nepovinný text s dodatečnými informacemi. | "Formátovaný \*text\*" |
+| název parametru | popis parametru                                 | typ       | příklad                   | povinný parametr
+| --------------- | ----------------------------------------------- | --------- | ------------------------- | ----------------
+| type            | Typ připojení, viz dále.                        | string    | "ssh"                     | ANO
+| port            | Port, na který se mají řešitelé připojit.       | number    | 22                        | NE
+| username        | Uživatelské jméno použité pro připojení.        | string    | student                   | NE
+| password        | Heslo použité v páru s uživatelským jménem.     | string    | heslo1234                 | NE
+| text            | Nepovinný text s dodatečnými informacemi.       | string    | "Formátovaný \*text\*"    | NE
 
 V parametru `type` je možné použít jednu z těchto hodnot:
 - ssh
@@ -88,20 +103,28 @@ V parametru `type` je možné použít jednu z těchto hodnot:
 
 U typu připojení `other` není povinné uvádět parametry `port`, `username` a `password`, většinou je ale naopak velmi využíván parametr `text` k vysvětlení nestandardního připojení.
 
-Parametr `text` umožňuje využití Markdownu k formátování. Fungování víceřádkových textů v YAML je hezky vysvětleno na stránce [YAML-multiline.info](https://yaml-multiline.info/). 
+Parametr `text` umožňuje využití Markdownu k formátování. Fungování víceřádkových textů v YAML je hezky vysvětleno na stránce [YAML-multiline.info](https://yaml-multiline.info/).
 
 ## `flags`
-Vlajky se dělí do celkem 5 typů.
+Vlajky se dělí do celkem 6 typů.
 
 Všechny typy vlajek mají společné tyto parametry:
 
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| name            | Pojmenování vlajky                                                                  | Oprávnění souboru `file-1`
-| description     | Bližší informace o úkolu. Podporuje Markdown formátování.                           | Změň oprávnění souboru `file-1` na 742.
-| points          | Bodové ohodnocení vlajky                                                            | 20
-| identifier      | Unikátní (v rámci této úlohy) identifikátor vlajky                                  | `file-perms-check1`
-| type            | Číslo označující druh vlajky<br>Je nutné uvést `type` jako `string` v uvozovkách!   | "4"
+| název parametru | popis parametru                                                                     | typ       | příklad                                   | povinný parametr
+| --------------- | ----------------------------------------------------------------------------------- | --------- | ----------------------------------------- | ----------------
+| name            | Pojmenování vlajky                                                                  | string    | Oprávnění souboru `file-1`                | ANO
+| description     | Bližší informace o úkolu. Podporuje Markdown formátování.                           | string    | Změň oprávnění souboru `file-1` na 742.   | NE
+| points          | Bodové ohodnocení vlajky                                                            | number    | 20                                        | ANO
+| identifier      | Unikátní (v rámci této úlohy) identifikátor vlajky                                  | string    | `file-perms-check1`                       | ANO
+| type            | Číslo označující druh vlajky<br>Je nutné uvést `type` jako `string` v uvozovkách!   | string    | "4"                                       | ANO
+
+V souboru pro [teorii](theory.md) lze vložit placeholder pro zobrazení konkrétní vlajky pomocí elementu `<haxagonflag>`. Tento element umožňuje dynamicky vkládat vlajku přímo do textu. Pro správné zobrazení je potřeba nastavit atribut `identifier` na odpovídající identifikátor vlajky.
+
+```
+<haxagonflag identifier="flag-1"></haxagonflag>
+```
+> Vloží vlajku, která má parametr identifier `flag-1`, na místo této definice.
+
 
 ### Dynamická vlajka
 
@@ -119,11 +142,11 @@ Pro zpřístupnění dynamické vlajky v `runtime` fázi kontejneru je potřeba 
 
 Specifika pro vlajky tohoto typu:
 
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| type            | "1", označuje tento typ vlajky | "1" |
-| placeholder     | Zástupný řetězec znaků sloužící pro označení místa, do kterého se vloží unikátní vlajka | flag2 |
-| maximumTries    | Maximální možný počet pokusů pro odpověď | 3 |
+| název parametru | popis parametru                                                                         | typ       | příklad   | povinný parametr
+| --------------- | --------------------------------------------------------------------------------------- | --------- | --------- | ----------------
+| type            | "1", označuje tento typ vlajky                                                          | string    | "1"       | ANO
+| placeholder     | Zástupný řetězec znaků sloužící pro označení místa, do kterého se vloží unikátní vlajka | string    | flag2     | ANO
+| maximumTries    | Maximální možný počet pokusů pro odpověď                                                | number    | 3         | ANO
 
 
 ### Statická vlajka
@@ -132,22 +155,22 @@ Tento druh vlajky mám pro všechny uživatele a ve všech instancích stejnou h
 
 Specifika pro vlajky tohoto typu:
 
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| type            | "2", označuje tento typ vlajky | "2" |
-| answer          | Odpověď na úkol | flag{{'{'}}1234} |
-| maximumTries    | Maximální možný počet pokusů pro odpověď | 3 |
+| název parametru | popis parametru                             | typ       | příklad           | povinný parametr
+| --------------- | ------------------------------------------- | --------- | ----------------- | ----------------
+| type            | "2", označuje tento typ vlajky              | string    | "2"               | ANO
+| answer          | Odpověď na úkol                             | string    | flag{{'{'}}1234}  | ANO
+| maximumTries    | Maximální možný počet pokusů pro odpověď    | number    | 3                 | ANO
 
 
 ### Vlajka s možností výběru odpovědi
 
 Specifika pro vlajky tohoto typu:
 
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| type            | "3", označuje tento typ vlajky | "3" |
-| maximumTries    | Maximální možný počet pokusů pro odpověď | 3 |
-| options         | Pole objektů možných odpovědí | viz níže |
+| název parametru | popis parametru                             | typ       | příklad   | povinný parametr
+| --------------- | ------------------------------------------- |-----------| --------- | ----------------
+| type            | "3", označuje tento typ vlajky              | string    | "3"       | ANO
+| maximumTries    | Maximální možný počet pokusů pro odpověď    | number    | 3         | ANO
+| options         | Pole objektů možných odpovědí               | viz níže  | viz níže  | ANO
 
 Objekty odpovědí mají tuto strukturu:
 ```yaml
@@ -160,16 +183,16 @@ Objekty odpovědí mají tuto strukturu:
 
 Pomocí `docker compose exec` se v definovaném **interval**u spouští definovaný příkaz **command** a podle návratové hodnoty **exitCode** procesu se určí, zda byla vlajka splněna. Možnost **container** určuje, ve kterém z možných kontejnerů se proces spustí.
 
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| type            | "4", označuje tento typ vlajky | "4" |
-| command         | Příkaz, který se spustí pro ověření splnění úkolu | `bash -c '[ "$(cat /tmp/test.txt)" == "ahoj" ]'` |
-| container       | Cílový kontejner, ve kterém se příkaz bude spouštět | server |
-| shell           | Shell, ve kterém je příkaz spouštěn | sh |
-| user            | Uživatel, pod kterým se příkaz spouští | root |
-| interval        | Interval, ve kterém dochází ke spuštění příkazu | 2000 |
-| exitCode        | Návratový kód **command**u, který bude považován za úspěch pro splnění vlajky | 0 |
-| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky. | `file-perms-check1` |
+| název parametru | popis parametru                                                                                     | typ                   | příklad                                           | povinný parametr
+| ----------------| --------------------------------------------------------------------------------------------------- | --------------------- | ------------------------------------------------- | ----------------
+| type            | "4", označuje tento typ vlajky                                                                      | string                | "4"                                               | ANO
+| command         | Příkaz, který se spustí pro ověření splnění úkolu                                                   | string                | `bash -c '[ "$(cat /tmp/test.txt)" == "ahoj" ]'`  | ANO
+| container       | Cílový kontejner, ve kterém se příkaz bude spouštět                                                 | string                | server                                            | ANO
+| shell           | Shell, ve kterém je příkaz spouštěn                                                                 | string                | sh                                                | NE
+| user            | Uživatel, pod kterým se příkaz spouští                                                              | string                | root                                              | NE
+| interval        | Interval, ve kterém dochází ke spuštění příkazu                                                     | number                | 2000                                              | ANO
+| exitCode        | Návratový kód **command**u, který bude považován za úspěch pro splnění vlajky                       | number                | 0                                                 | ANO
+| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky.   | string \| string[]    | `file-perms-check1`                               | NE
 
 Parametr `interval` je měřen v milisekundách.
 
@@ -181,26 +204,30 @@ Pokud pole `requiredFlags` obsahuje pouze jeden prvek, zapisuje se jako `require
 
 Skrze Google API se získají data z dokumentu tabulek. Ty jsou následně předány do izolovaného sandboxu, kde se provede kontrola úkolu.
 
-| název parametru | popis parametru | příklad |
-|-----------------|-----------------|---------|
-| type            | "5", označuje tento typ vlajky | "5" |
-| let             | Objekt proměnných, do kterých jsou uloženy hodnoty z odpovědi z Google API | `a: sheets.0.data.0.rowData.5.values.5.userEnteredValue.formulaValue` |
-| condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true. | "a == 1" |
-| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky. | `file-perms-check1` |
+| název parametru | popis parametru                                                                                                                 | typ                   | příklad                                                               | povinný parametr
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------- | ---------------
+| type            | "5", označuje tento typ vlajky                                                                                                  | string                | "5"                                                                   | ANO
+| let             | Objekt proměnných, do kterých jsou uloženy hodnoty z odpovědi z Google API                                                      | object                | `a: sheets.0.data.0.rowData.5.values.5.userEnteredValue.formulaValue` | ANO
+| condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true.    | string                | "a == 1"                                                              | ANO
+| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky.                               | string \| string[]    | `file-perms-check1`                                                   | NE
 
-## `googleSpreadSheetId`
+### Vlajka kontroly kódu
 
-Google sheets document ID zdrojového dokumentu. Zdrojový dokument musí mít nastavené oprávnění čtení pro kohokoli s odkazem.
-Samotné ID pak lze získat z URL dokumentu.
+Specifikace pro vlajky tohoto typu:
 
-Pokud by url vypadala následnovně:
+| název parametru   | popis parametru                                               | typ       | příklad               | povinný parametr
+| ----------------- | ------------------------------------------------------------- |---------- | --------------------- | ----------------
+| type              | "6", označuje tento typ vlajky                                | string    | "6"                   | ANO
+| defaultCode       | Relativní cesta k výchozímu kódu                              | string    | ./Defaults/code.py    | ANO
+| checker           | Relativní cesta ke kódu, který zkontroluje napsaný program    | string    | ./Checkers/code.py    | ANO
+| testCases         | Pole objektů definující jména jednotlivých testů              | object[]  | viz níže              | ANO
+
 ```
-https://docs.google.com/spreadsheets/d/16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI/edit?gid=0#gid=0
+testCases:
+  - name: "test 1"
+  - name: "test 2"
+  - name: "test 3"
 ```
-
-Pak je ID: `16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI`.
-
-> Tento paramert zadávejte jen v případě, že úloha je typu `sheets`
 
 ## Ukázkový soubor `challenge.yaml`
 
