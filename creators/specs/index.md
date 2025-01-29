@@ -118,7 +118,7 @@ Všechny typy vlajek mají společné tyto parametry:
 | identifier      | Unikátní (v rámci této úlohy) identifikátor vlajky                                  | string    | `file-perms-check1`                       | ANO
 | type            | Číslo označující druh vlajky<br>Je nutné uvést `type` jako `string` v uvozovkách!   | string    | "4"                                       | ANO
 
-V souboru pro [teorii](theory.md) lze vložit placeholder pro zobrazení konkrétní vlajky pomocí elementu `<haxagonflag>`. Tento element umožňuje dynamicky vkládat vlajku přímo do textu. Pro správné zobrazení je potřeba nastavit atribut `identifier` na odpovídající identifikátor vlajky.
+V souboru pro `teorii` lze vložit placeholder pro zobrazení konkrétní vlajky pomocí elementu `<haxagonflag>`. Tento element umožňuje dynamicky vkládat vlajku přímo do textu. Pro správné zobrazení je potřeba nastavit atribut `identifier` na odpovídající identifikátor vlajky.
 
 ```
 <haxagonflag identifier="flag-1"></haxagonflag>
