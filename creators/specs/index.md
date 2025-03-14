@@ -307,6 +307,29 @@ flags:
 
 Tímto souborem jsme schopni definovat, jaká infrastruktura se pro úlohu spustí. Dokumentace formátu je dostupná na [https://docs.docker.com/compose/](https://docs.docker.com/compose/).
 
+## Preferované verze Docker image
+Pro snížení duplikací a stahování více verzí stejného Docker image byly vybrány následující verze, které by měly být v úlohách upřednostňovány:
+```
+haxagon/workstation:27022025
+haxagon/challenge-workstation:27022025
+haxagon/workstation-sysbox:27022025
+mongo:7.0.17
+wordpress:6.7.2-php8.1-apache
+httpd:2.4.63-alpine
+phpmyadmin:5.2.2-apache
+adminer:4.17.1
+postgres:17.4-alpine3.21
+php:8.3.17
+mysql:9.2.0
+python:3.13.0-alpine3.20
+busybox:1.37.0
+mariadb:11.7.2
+nginx:1.27.3
+ubuntu:noble-20250127
+alpine:3.20.3
+node:23.7.0-alpine3.20
+```
+
 ## Limity
 V souboru docker-compose není možné
 - Eskalovat práva kontejneru
