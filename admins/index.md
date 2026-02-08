@@ -114,21 +114,31 @@ Následující tabulky obsahují kompletní přehled oprávnění pro všechny r
 | Operace | Student | Učitel | Správce |
 |---------|---------|--------|---------|
 | Zobrazit detail uživatele | ✅ Sebe a členy skupin | ✅ Uživatele v org. | ✅ Uživatele v org. |
+| Zobrazit seznam uživatelů | ✅ Viditelné | ✅ Uživatele v org. | ✅ Uživatele v org. |
 | Zobrazit vlastní profil | ✅ | ✅ | ✅ |
 | Smazat uživatele | ❌ | ✅ Studenty | ✅ Studenty i učitele |
 | Změnit heslo | ✅ Sobě | ✅ Uživatelům v org. | ✅ Uživatelům v org. |
 | Upravit avatar | ✅ Sobě | ✅ Uživatelům v org. | ✅ Uživatelům v org. |
+| Aktualizovat nastavení | ✅ Sobě | ✅ Uživatelům v org. | ✅ Uživatelům v org. |
 | Přidat do skupiny | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 | Odebrat ze skupiny | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 | Spravovat VPN | ✅ Sobě | ✅ Uživatelům v org. | ✅ Uživatelům v org. |
+| Odpojit instanci od uživatele | ❌ | ✅ Ve svých skupinách | ✅ Všechny v organizaci |
 
 ### Úlohy
 
 | Operace | Student | Učitel | Správce |
 |---------|---------|--------|---------|
 | Zobrazit úlohu | ✅ Zadané | ✅ Licencované | ✅ Licencované |
+| Zobrazit seznam úloh | ✅ Zadané | ✅ Licencované | ✅ Licencované |
 | Vytvořit úlohu | Speciální¹ | Speciální¹ | Speciální¹ |
-| Upravit/smazat úlohu | ❌ | ❌ | Pouze vlastník² |
+| Upravit úlohu | ❌ | ❌ | Pouze vlastník² |
+| Smazat úlohu | ❌ | ❌ | Pouze vlastník² |
+| Přidat/odebrat štítky | ❌ | ❌ | Pouze vlastník² |
+| Synchronizovat z gitu | ❌ | ❌ | Pouze vlastník² |
+| Inicializovat z gitu | Speciální¹ | Speciální¹ | Speciální¹ |
+| Povolit/zakázat přístup | ❌ | Pouze vlastník² | Pouze vlastník² |
+| Spravovat úlohu pro uživatele | ❌ | Pouze vlastník² | Pouze vlastník² |
 | Označit jako oblíbenou | ✅ | ✅ | ✅ |
 
 ### Zadání úloh
@@ -136,10 +146,12 @@ Následující tabulky obsahují kompletní přehled oprávnění pro všechny r
 | Operace | Student | Učitel | Správce |
 |---------|---------|--------|---------|
 | Zobrazit zadání | ✅ Ve skupině | ✅ Ve skupině | ✅ Všechny v organizaci |
+| Zobrazit seznam zadání | ✅ Přístupná | ✅ Kde je členem | ✅ Všechny v organizaci |
 | Vytvořit zadání | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 | Smazat zadání | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 | Zobrazit vlastní postup | ✅ | ✅ | ✅ |
 | Zobrazit postup všech | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
+| Zobrazit řešitele/žebříček | ✅ Pokud povolen | ✅ Kde je členem | ✅ Všechny skupiny |
 | Resetovat čas | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 | Resetovat postup | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 
@@ -148,27 +160,36 @@ Následující tabulky obsahují kompletní přehled oprávnění pro všechny r
 | Operace | Student | Učitel | Správce |
 |---------|---------|--------|---------|
 | Zobrazit instanci | ✅ Vlastní | ✅ Ve svých skupinách | ✅ Všechny v organizaci |
+| Zobrazit seznam instancí | ✅ Vlastní | ✅ Ve svých skupinách | ✅ Všechny v organizaci |
 | Spustit instanci | ✅ Vlastní | ✅ Ve svých skupinách | ✅ Všechny v organizaci |
 | Zastavit instanci | ✅ Vlastní | ✅ Ve svých skupinách | ✅ Všechny v organizaci |
+| Přiřadit instanci uživateli | ✅ Vlastní | ✅ Ve svých skupinách | ✅ Všechny v organizaci |
 
 ### Vlajky
 
 | Operace | Student | Učitel | Správce |
 |---------|---------|--------|---------|
-| Odevzdat vlajku | ✅ Vlastní instance | ❌ | ❌ |
-| Odevzdat kvíz/kód | ✅ | ✅ | ✅ |
-| Zobrazit detail vlajek | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
-| Smazat odevzdání | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
+| Odevzdat vlajku (instance) | ✅ Vlastní instance | ❌ | ❌ |
+| Odevzdat kvízovou vlajku | ✅ | ✅ | ✅ |
+| Odevzdat kódovou vlajku | ✅ | ✅ | ✅ |
+| Zkontrolovat příkazovou vlajku | ✅ Vlastní instance | ✅ | ✅ |
+| Zobrazit přehled zadání | ✅ | ✅ | ✅ |
+| Zobrazit detail vlajek uživatele | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
+| Smazat odevzdání vlajek | ❌ | ✅ Kde je členem | ✅ Všechny skupiny |
 
 ### Pozvánky
 
 | Operace | Student | Učitel | Správce |
 |---------|---------|--------|---------|
-| Zobrazit pozvánky | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
+| Zobrazit pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
+| Zobrazit seznam pozvánek | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
 | Vytvořit pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
 | Smazat pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
 | Obnovit pozvánku | ❌ | ✅ | ✅ |
+| Znovu odeslat pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
 | Vytvořit otevřenou pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
+| Upravit otevřenou pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
+| Smazat otevřenou pozvánku | ❌ | ✅ Své skupiny + org. | ✅ Všechny v organizaci |
 
 ### Licence
 
