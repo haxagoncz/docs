@@ -3,8 +3,7 @@ Battlefield je prostor pro studenty poměřit své síly s ostatními v rámci s
 
 Je postaven na úlohách podobných těm využívaným ve výuce, ale obecně více "soutěžového typu" – úlohy mohou být i významně těžší a neobsahují žádnou teorii.
 
-<!--TODO: link na podmínky, které uživatel musí akceptovat, aby si je mohli přečíst i pak / předem -->
-Pro přístup do Battlefieldu je nutné akceptovat podmínky užití<!--[Podmínky užití](#)-->, které se věnují zejména soutěžnímu fair-play.
+Pro přístup do Battlefieldu je nutné akceptovat podmínky užití, které se věnují zejména soutěžnímu fair-play.
 
 <hr><br>
 

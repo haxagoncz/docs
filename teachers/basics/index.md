@@ -1,8 +1,12 @@
-# Základní používání platformy HAXAGON pro učitele a lektory
+# Základní používání platformy HAXAGON pro učitele
 
 ::: info
 Celá tato sekce předpokládá znalost funkcí platformy z pohledu studentů.  
 Pro lepší porozumění si proto nejdříve projděte [studentskou sekci](./../../students/).
+:::
+
+::: tip Pro správce organizace
+Pokud jste **správce organizace**, máte rozšířená oprávnění – vidíte všechny skupiny a uživatele v organizaci, můžete povyšovat učitele na správce a další. Více v [dokumentaci pro správce](/admins/).
 :::
 
 # Odlišnosti od studentského rozhraní
@@ -50,10 +54,7 @@ Posledním z administrativních nástrojů je možnost smazat zadanou úlohu.
 Tím zmizí studentům ze stránky [Přehled](/students/basics/index.md#prehled), z [Katalogu](/students/basics/index.md#katalog) a body, které za úlohu získali, se jim odečtou z žebříčků.
 
 ::: warning Pozor!
-Mazání úlohy nevyžaduje potvrzení, takže pozor na ukliknutí-se –⁠ smazání úlohy smaže studentům i všechen jejich postup v dané úloze.
-<!--- 
-TODO: až začne tlačítko vyžadovat potvrzení, smazat tohle.
---->
+Mazání úlohy smaže studentům všechen jejich postup v dané úloze. Před smazáním se ujistěte, že to opravdu chcete.
 :::
 
 
@@ -164,6 +165,38 @@ Jsou dvě možnosti, jak pozvat nového uživatele:
 Vytvořené pozvánky je možné vidět ve spodní části stránky detailu skupiny. Zde je také možné získat registrační odkaz pro daného uživatele kliknutím na tlačítko ve sloupci "Odkaz". Ten je možné poslat uživateli libovolnou cestou a umožní mu registrovat se do HAXAGONu, pokud není pohodlné posílat pozvánku na e-mail.  
 Pozvánky je také možné smazat výběrem zaklikávacích políček v levé části tabulky.
 
+## Otevřené pozvánky (veřejné odkazy)
+
+Kromě klasických pozvánek na e-mail existuje možnost vytvořit **otevřený registrační odkaz**. Ten může kdokoliv použít k registraci bez nutnosti zadávat e-mail předem.
+
+### Vytvoření otevřené pozvánky
+1. V detailu skupiny klikněte na tlačítko **"Vytvořit otevřenou pozvánku"**
+2. Vyberte, zda má být uživatel přidán jako **student** nebo **učitel**
+3. Volitelně nastavte:
+   - **Maximální počet použití** – kolikrát může být odkaz využit
+   - **Datum expirace** – do kdy je odkaz platný
+   - **Zkrácený odkaz** – pro snadnější sdílení (kratší URL)
+
+### Kdy použít otevřenou pozvánku
+- Pro hromadnou registraci na workshopy nebo soutěže
+- Když neznáte e-maily studentů předem
+- Pro rychlé přidávání do skupiny
+- Pro QR kód na plakátech nebo prezentacích (Pozor! Neměl by se dostat do rukou nepovolaných osob!)
+
+### Správa otevřených pozvánek
+Vytvořené otevřené pozvánky jsou viditelné v sekci **"Spravovat" → "Pozvánky"**. Zde můžete:
+- Zobrazit statistiky použití (kolikrát byl odkaz využit)
+- Upravit nastavení pozvánky
+- Deaktivovat nebo smazat pozvánku
+
+::: warning Upozornění
+Otevřené pozvánky mohou být zneužity, pokud se odkaz dostane k nepovolaným osobám. Doporučujeme:
+- Nastavit maximální počet použití
+- Nastavit datum expirace
+- Po akci odkaz deaktivovat
+- Nesdílet odkaz s nepovolanými osobami, např. na webu školy, kde je odkaz dostupný veřejně
+:::
+
 ## Noví učitelé ve skupině
 Všichni uživatelé přidaní do skupiny jsou automaticky klasifikovaní jako "studenti". Pokud byl do skupiny přidán učitel, vyberte ho zaškrtávacím políčkem v seznamu "Studenti" na stránce detailu skupiny, ve které bude učitelem. Po vybrání se zpřístupní nad tabulkou tlačítko "Povýšit na učitele", kterým přidáte vybranému uživateli mj. práva k zadávání úloh a správě uživatelů ve skupině.  
 Tento krok je možné vrátit opětovným vybráním uživatele v seznamu a tlačítkem "Ponížit na studenta".
@@ -182,9 +215,4 @@ Ve spodní části obrazovky se nastavuje časový rozsah, který se bere v úva
 
 Po nastavení všech parametrů a omezení exportu stačí stisknout jedno z tlačítek zcela dole na stránce: Export ve formátu JSON, ODS nebo XLSX.
 
-<!-- 
-Exportovaná data obsahují
-
-TODO: popsat, co všechno tam je, až to bude fungovat
-
--->
+Exportovaná data obsahují informace o každém studentovi: počet vyřešených vlajek, získané body, čas strávený na úlohách a detaily jednotlivých odevzdání.

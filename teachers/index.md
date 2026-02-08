@@ -24,6 +24,11 @@ features:
     title: Getting started
     details: První kroky k výuce
 
+  - icon: 🏫
+    link: ./organisation/
+    title: Struktura organizace
+    details: Hierarchie organizací, skupin a rolí
+
   - icon: 🌤
     link: ./white-mode/
     title: Světlý mód
@@ -33,5 +38,10 @@ features:
     link: ./new-year/
     title: Začátek nového roku
     details: Jak ideálně přejít se třídou mezi ročníky
+
+  - icon: 👑
+    link: /admins/
+    title: Pro správce
+    details: Rozšířená oprávnění pro správce organizací
 
 ---
