@@ -84,13 +84,13 @@ Pak je ID: `16yi2Nc9gwddlPhFxJBhHSm2_wo4U9lI-D6Okt0Xw_iI`.
 ## `access`
 
 Základní formát objektů přístupu je tento:
-| název parametru | popis parametru                                 | typ       | příklad                   | povinný parametr
-| --------------- | ----------------------------------------------- | --------- | ------------------------- | ----------------
-| type            | Typ připojení, viz dále.                        | string    | "ssh"                     | ANO
-| port            | Port, na který se mají řešitelé připojit.       | number    | 22                        | NE
-| username        | Uživatelské jméno použité pro připojení.        | string    | student                   | NE
-| password        | Heslo použité v páru s uživatelským jménem.     | string    | heslo1234                 | NE
-| text            | Nepovinný text s dodatečnými informacemi.       | string    | "Formátovaný \*text\*"    | NE
+| název parametru | popis parametru                                                                                                          | typ       | příklad                   | povinný parametr
+| --------------- | ------------------------------------------------------------------------------------------------------------------------ | --------- | ------------------------- | ----------------
+| type            | Typ připojení, viz dále.                                                                                                 | string    | "ssh"                     | ANO
+| port            | Port, na který se mají řešitelé připojit. (Pokud je `type: http` a `port` neni definován, tak se použije `port: 80`)     | number    | 22                        | NE
+| username        | Uživatelské jméno použité pro připojení.                                                                                 | string    | student                   | NE
+| password        | Heslo použité v páru s uživatelským jménem.                                                                              | string    | heslo1234                 | NE
+| text            | Nepovinný text s dodatečnými informacemi.                                                                                | string    | "Formátovaný \*text\*"    | NE
 
 V parametru `type` je možné použít jednu z těchto hodnot:
 - ssh
