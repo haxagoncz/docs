@@ -1,12 +1,13 @@
 FROM node:20-alpine AS build
 
-RUN npm i -g pnpm
+RUN npm i -g pnpm@10
 
 WORKDIR /build
-COPY package.json /build
-RUN pnpm i
 
-ADD . /build/
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --frozen-lockfile
+
+COPY . .
 RUN pnpm run build
 
 FROM nginx:stable-alpine
