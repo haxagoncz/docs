@@ -22,5 +22,9 @@ features:
     link: ./formatting/
     title: Formátování
     details: Vychytávky, které lze použít při psaní popisu
+  - icon: 🌐
+    link: ./networker/
+    title: Networker
+    details: Tvorba síťových úloh v Networkeru
 
 ---
