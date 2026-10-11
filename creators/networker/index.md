@@ -247,6 +247,21 @@ Export nepřenese obsah `/tmp`, `/var/tmp`, `/var/log` a `/run`, soubor
 `/etc/hosts`, hostname ani `resolv.conf`. Všechny ostatní soubory přenese,
 ať vznikly jakkoli.
 
+::: warning
+Export přenáší soubory, ne stav běžících procesů. Cokoli, co existuje jen
+za běhu a není uložené ve filesystému, se nezachová. Typický příklad jsou
+pravidla `iptables`: po importu zmizí, pokud je neuložíte do souboru. Na
+serveru proto doinstalujte `iptables-persistent` a pravidla uložte:
+
+```bash
+apt install iptables-persistent
+netfilter-persistent save
+```
+
+Totéž platí pro cokoli dalšího nastaveného jen za běhu (např. ručně
+spuštěné procesy nebo změny přes `sysctl` bez zápisu do `/etc/sysctl.conf`).
+:::
+
 Export jde udělat jen nad nasazenou topologií. V
 [náhledu pohledem studenta](#nahled-pohledem-studenta) export ani import nejde.
 
