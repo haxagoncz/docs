@@ -370,6 +370,67 @@ Dockerfile
 docker-compose.yaml
 ```
 
+#### challenge.yaml
+
+Úloha v Networkeru musí mít v `challenge.yaml` nastavený typ `networker`:
+
+```yaml
+type: networker
+```
+
+Ukázkový `challenge.yaml` celé úlohy:
+
+```yaml
+title: ARP spoofing
+shortDescription: Connect to the LAN, obtain a tool, and carry out a working MITM
+type: networker
+description: DESCRIPTION.md
+theory: THEORY.md
+handbook: HANDBOOK.md
+access:
+  - port: 3000
+    type: http
+tags:
+  - networking
+  - arp
+  - security
+flags:
+  - name: Poisoned victim ARP table
+    description: Redirect the victim's communication with the gateway through attacker.
+    identifier: poison-victim
+    points: 10
+    type: "4"
+    container: containerlab
+    command: "networker-check --node node2 --command 'ping -c 2 -W 2 ${node.node1.iface.eth0.ipv4} >/dev/null 2>&1; ip -4 neighbour show ${node.node1.iface.eth0.ipv4} dev eth0 | grep -qi ${node.node3.iface.eth0.mac}'"
+    interval: 5000
+    exitCode: 0
+  - name: Poisoned gateway ARP table
+    description: Redirect the gateway's replies through attacker.
+    identifier: poison-gateway
+    points: 10
+    type: "4"
+    container: containerlab
+    command: "networker-check --node node1 --command 'ping -c 2 -W 2 ${node.node2.iface.eth0.ipv4} >/dev/null 2>&1; ip -4 neighbour show ${node.node2.iface.eth0.ipv4} dev eth0 | grep -qi ${node.node3.iface.eth0.mac}'"
+    interval: 5000
+    exitCode: 0
+    requiredFlags:
+      - poison-victim
+  - name: Working MITM
+    description: Keep the victim's internet connection working through attacker.
+    identifier: mitm-active
+    points: 15
+    type: "4"
+    container: containerlab
+    command: "networker-check --node node1 --command 'ip -4 neighbour show ${node.node2.iface.eth0.ipv4} dev eth0 | grep -qi ${node.node3.iface.eth0.mac}' && networker-check --node node2 --command 'ip -4 neighbour show ${node.node1.iface.eth0.ipv4} dev eth0 | grep -qi ${node.node3.iface.eth0.mac} && ping -c 2 -W 4 1.1.1.1 >/dev/null 2>&1'"
+    interval: 5000
+    exitCode: 0
+    requiredFlags:
+      - poison-victim
+      - poison-gateway
+```
+
+Jednotlivé vlajky jsou podrobně popsané v sekci [Kontroly řešení úlohy](#kontroly-reseni-ulohy).
+
 #### Dockerfile
 
 Stavte nad publikovaným image Networkeru:
