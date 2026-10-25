@@ -49,12 +49,12 @@ Tyto soubory jsou detailněji rozebrány v následujících sekcích.
 ## `difficulty`
 
 Vabírat můžete z těchto možností:
+- simple
 - beginner
 - average
 - skilled
 - expert
 - master
-- unselected
 
 
 ## `type`
@@ -106,7 +106,7 @@ U typu připojení `other` není povinné uvádět parametry `port`, `username` 
 Parametr `text` umožňuje využití Markdownu k formátování. Fungování víceřádkových textů v YAML je hezky vysvětleno na stránce [YAML-multiline.info](https://yaml-multiline.info/).
 
 ## `flags`
-Vlajky se dělí do celkem 6 typů.
+Vlajky se dělí do celkem 8 typů.
 
 Všechny typy vlajek mají společné tyto parametry:
 
@@ -114,6 +114,7 @@ Všechny typy vlajek mají společné tyto parametry:
 | --------------- | ----------------------------------------------------------------------------------- | --------- | ----------------------------------------- | ----------------
 | name            | Pojmenování vlajky                                                                  | string    | Oprávnění souboru `file-1`                | ANO
 | description     | Bližší informace o úkolu. Podporuje Markdown formátování.                           | string    | Změň oprávnění souboru `file-1` na 742.   | NE
+| spoiler         | Skrytý obsah k vlajce (např. nápověda nebo řešení), který řešitelé nevidí. Podporuje Markdown formátování. | string    | Použij příkaz `chmod`.                    | NE
 | points          | Bodové ohodnocení vlajky                                                            | number    | 20                                        | ANO
 | identifier      | Unikátní (v rámci této úlohy) identifikátor vlajky                                  | string    | `file-perms-check1`                       | ANO
 | type            | Číslo označující druh vlajky<br>Je nutné uvést `type` jako `string` v uvozovkách!   | string    | "4"                                       | ANO
@@ -192,13 +193,15 @@ Pomocí `docker compose exec` se v definovaném **interval**u spouští definova
 | user            | Uživatel, pod kterým se příkaz spouští                                                              | string                | root                                              | NE
 | interval        | Interval, ve kterém dochází ke spuštění příkazu                                                     | number                | 2000                                              | ANO
 | exitCode        | Návratový kód **command**u, který bude považován za úspěch pro splnění vlajky                       | number                | 0                                                 | ANO
-| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky.   | string \| string[]    | `file-perms-check1`                               | NE
+| requiredFlags   | Volitelné pole `identifier`ů automaticky vyhodnocujících se vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky.   | string \| string[]    | `file-perms-check1`                               | NE
 
 Parametr `interval` je měřen v milisekundách.
 
 Pokud bude jako hodnota `interval` uvedena 0, `command` nebude prováděn automaticky, ale v zadání úlohy se objeví tlačítko, kterým si ho řešitelé mohou spustit manuálně. Toto je vhodné pro náročné příkazy, jejichž vyhodnocení trvá dlouho nebo vyžaduje hodně prostředků.
 
 Pokud pole `requiredFlags` obsahuje pouze jeden prvek, zapisuje se jako `requiredFlags: "file-perms-check1"`. Pokud obsahuje více prvků, je třeba hodnoty zapsat jako YAML sekvenci. Pokud není třeba splnění vlajky podmiňovat jinou vlajkou, `requiredFlags` se neuvádí vůbec.
+
+Parametr `requiredFlags` lze použít pouze u automaticky vyhodnocujících se vlajek (typ "4") a odkazovat lze také pouze na vlajky tohoto typu. Vlajka nemůže vyžadovat sama sebe.
 
 ### Vlajka automatické kontroly tabulek
 
@@ -209,7 +212,6 @@ Skrze Google API se získají data z dokumentu tabulek. Ty jsou následně před
 | type            | "5", označuje tento typ vlajky                                                                                                  | string                | "5"                                                                   | ANO
 | let             | Objekt proměnných, do kterých jsou uloženy hodnoty z odpovědi z Google API                                                      | object                | `a: sheets.0.data.0.rowData.5.values.5.userEnteredValue.formulaValue` | ANO
 | condition       | JS kod, který v sandboxu vyhodnotí splnění úkolu. Úkol je vyhodnocen jako splněný v případě, že návratová hodnota bude true.    | string                | "a == 1"                                                              | ANO
-| requiredFlags   | Volitelné pole `identifier`ů vlajek, které musí být splněny, než se vyhodnotí příkaz této vlajky.                               | string \| string[]    | `file-perms-check1`                                                   | NE
 
 ### Vlajka kontroly kódu
 
@@ -227,6 +229,45 @@ testCases:
   - name: "test 1"
   - name: "test 2"
   - name: "test 3"
+```
+
+### Vlajka s možností výběru obrázku
+
+Funguje stejně jako [vlajka s možností výběru odpovědi](#vlajka-s-moznosti-vyberu-odpovedi), jednotlivé možnosti jsou ale obrázky vložené pomocí Markdownu.
+
+Specifika pro vlajky tohoto typu:
+
+| název parametru | popis parametru                             | typ       | příklad   | povinný parametr
+| --------------- | ------------------------------------------- |-----------| --------- | ----------------
+| type            | "7", označuje tento typ vlajky              | string    | "7"       | ANO
+| maximumTries    | Maximální možný počet pokusů pro odpověď    | number    | 1         | ANO
+| options         | Pole objektů možných odpovědí               | viz níže  | viz níže  | ANO
+
+Objekty odpovědí mají tuto strukturu:
+```yaml
+- value: "![Možnost 1](https://example.com/obrazek1.png)"
+  correct: false
+```
+
+### Vlajka s otevřenou odpovědí
+
+Vychází z [vlajky s možností výběru odpovědi](#vlajka-s-moznosti-vyberu-odpovedi). Ve výchozím stavu se vlajka chová jako klasická vlajka s možností výběru odpovědi a řešitel vybírá z možností uvedených v parametru `answerOptions`. Vlajku je ale možné přepnout do režimu otevřené odpovědi. Řešitel pak odpověď píše vlastními slovy do textového pole a tu následně vyhodnotí LLM.
+
+Možné odpovědi se místo v parametru `options` uvádí v parametru `answerOptions`, protože slouží pro oba režimy. V režimu výběru jsou zobrazeny jako možnosti a v režimu otevřené odpovědi slouží LLM hodnotiteli jako vzor správné odpovědi.
+
+Specifika pro vlajky tohoto typu:
+
+| název parametru | popis parametru                                                                                                         | typ       | příklad                                   | povinný parametr
+| --------------- | ----------------------------------------------------------------------------------------------------------------------- |-----------| ----------------------------------------- | ----------------
+| type            | "8", označuje tento typ vlajky                                                                                          | string    | "8"                                       | ANO
+| maximumTries    | Maximální možný počet pokusů pro odpověď                                                                                | number    | 3                                         | ANO
+| answerOptions   | Pole objektů možných odpovědí                                                                                           | viz níže  | viz níže                                  | ANO
+| graderHint      | Instrukce pro LLM hodnotitele, které zpřesní vyhodnocení odpovědi. Řešitelé je nevidí.                                   | string    | Uznej odpověď, která zmíní plaintext.     | NE
+
+Objekty odpovědí mají stejnou strukturu jako u vlajky s možností výběru odpovědi:
+```yaml
+- value: "chybná odpověď"
+  correct: false
 ```
 
 ## Ukázkový soubor `challenge.yaml`
@@ -310,8 +351,6 @@ Tímto souborem jsme schopni definovat, jaká infrastruktura se pro úlohu spust
 ## Preferované verze Docker image
 Pro snížení duplikací a stahování více verzí stejného Docker image byly vybrány následující verze, které by měly být v úlohách upřednostňovány:
 ```
-haxagon/workstation:27022025
-haxagon/challenge-workstation:27022025
 haxagon/workstation-sysbox:27022025
 mongo:7.0.17
 wordpress:6.7.2-php8.1-apache
