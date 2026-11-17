@@ -366,7 +366,6 @@ challenge.yaml       # název, popis, přístup, vlajky
 DESCRIPTION.md       # co vidí student
 THEORY.md            # kontext a nápovědy
 HANDBOOK.md          # jak úlohu vyřešit
-Dockerfile
 docker-compose.yaml
 ```
 
@@ -431,14 +430,6 @@ flags:
 
 Jednotlivé vlajky jsou podrobně popsané v sekci [Kontroly řešení úlohy](#kontroly-reseni-ulohy).
 
-#### Dockerfile
-
-Stavte nad publikovaným image Networkeru:
-
-```dockerfile
-FROM haxagon/challenges-networker:containerlab
-```
-
 #### docker-compose.yaml
 
 Toto je šablona. Dvě služby:
@@ -450,24 +441,23 @@ Toto je šablona. Dvě služby:
 ```yaml
 services:
   port-broker:
-    image: haxagon/challenges-networker:port-broker
+    image: haxagon/networker:port-broker
     network_mode: host
     restart: unless-stopped
     volumes:
       - networker-run:/var/run/networker
+    environment:
+      START_PORT: "10000"
 
   containerlab:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: haxagon/challenges-networker-<uloha>:containerlab
-    runtime: sysbox-runc
+    image: haxagon/networker:containerlab
     tty: true
+    runtime: sysbox-runc
     devices:
       - /dev/net/tun:/dev/net/tun
     volumes:
       - networker-run:/var/run/networker
-      - lab-cache:/var/lib/networker/lab 
+      - lab-cache:/var/lib/networker/lab
     ports:
       - ${NETWORKER_PORT:-3000}:3000
     environment:
